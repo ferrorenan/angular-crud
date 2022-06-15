@@ -1,0 +1,18 @@
+{
+  "user": {
+    "name": "Renan Ferro",
+    "avatar": "www.google.com.br",
+    "email": "renan.ferro@fmd.ag"
+  },
+  "movies": [
+    {
+      "name": "Fast and Furious 1"
+    },
+    {
+      "name": "Fast and Furious 2"
+    },
+    {
+      "name": "Fast and Furious 3"
+    }
+  ]
+}
