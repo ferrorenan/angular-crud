@@ -6,11 +6,13 @@ import { DashboardComponent } from './dashboard.component';
 import {
   PanelContentModule
 } from '../../components/panel-content/panel-content.module';
+import { BoardComponent } from './components/board/board.component';
 
 
 @NgModule({
   declarations: [
-      DashboardComponent
+      DashboardComponent,
+      BoardComponent
   ],
   imports: [
     CommonModule,

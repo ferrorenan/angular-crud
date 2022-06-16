@@ -1,30 +1,15 @@
 <app-panel-content>
-  <div>
+  <section>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-4">
           <div class="card">
             <div class="card-body">
-              <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status">
-                  <span class="visually-hidden">Loading...</span>
-                </div>
-              </div>
               <ng-container *ngIf="(userData$ | async) as userData; else feedbackApiStatus">
-                <img [src]="'assets/svg/'+ userData.avatar +'.svg'"
-                     title="Avatar"
-                     alt="Avatar"
-                     class="mb-2 img-fluid"
-                     loading="lazy"
-                     width="100"
-                     height="100">
-                <h1>
-                  {{ userData.name }}
-                </h1>
-                <p class="mb-2">
-                  {{ userData.email }}
-                </p>
-                <div class="d-grid gap-1">
+                <app-board [iconName]="'svg/'+ userData.avatar +'.svg'"
+                           [title]="userData.name"
+                           [description]="userData.email"></app-board>
+                <div class="mt-2 d-grid gap-1">
                   <button class="btn btn-success text-white"
                           type="button">Movies
                   </button>
@@ -35,38 +20,14 @@
               </ng-container>
               <ng-template #feedbackApiStatus>
                 <ng-container *ngIf="(userDataApiError$ | async); else loadingData">
-                  <img src="assets/images/ic-dark-mode.png"
-                       title="Loading"
-                       alt="Loading"
-                       class="mb-2 img-fluid"
-                       loading="lazy"
-                       width="100"
-                       height="100">
-                  <h2 class="text-danger">
-                    Não conseguimos obter os dados :(
-                  </h2>
-                  <p class="mb-0">
-                    Não conseguimos obter os dados
-                    <br>
-                    tente novamente mais tarde!
-                  </p>
+                  <app-board iconName="images/ic-dark-mode.png"
+                             title="Não conseguimos obter os dados :("
+                             description="Não conseguimos obter os dados tente novamente mais tarde!"></app-board>
                 </ng-container>
                 <ng-template #loadingData>
-                  <img src="assets/svg/spinner.svg"
-                       title="Loading"
-                       alt="Loading"
-                       class="mb-2 img-fluid"
-                       loading="lazy"
-                       width="150"
-                       height="150">
-                  <h2>
-                    Obtendo todos os dados!
-                  </h2>
-                  <p class="mb-0">
-                    Aguarde enquanto buscamos
-                    <br>
-                    todos os dados!
-                  </p>
+                  <app-board iconName="svg/spinner.svg"
+                             title="Obtendo todos os dados!"
+                             description="Aguarde enquanto buscamos todos os dados!"></app-board>
                 </ng-template>
               </ng-template>
             </div>
@@ -74,5 +35,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </app-panel-content>
