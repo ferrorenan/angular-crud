@@ -5,7 +5,12 @@
         <div class="col-lg-4">
           <div class="card">
             <div class="card-body">
-              <ng-container *ngIf="(userData$ | async) as userData">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+              <ng-container *ngIf="(userData$ | async) as userData; else feedbackApiStatus">
                 <img [src]="'assets/svg/'+ userData.avatar +'.svg'"
                      title="Avatar"
                      alt="Avatar"
@@ -28,6 +33,23 @@
                   </button>
                 </div>
               </ng-container>
+              <ng-template #feedbackApiStatus>
+                <img src="assets/svg/spinner.svg"
+                     title="Loading"
+                     alt="Loading"
+                     class="mb-2 img-fluid"
+                     loading="lazy"
+                     width="150"
+                     height="150">
+                <h2>
+                  Obtendo todos os dados!
+                </h2>
+                <p class="mb-0">
+                  Aguarde enquanto buscamos
+                  <br>
+                  todos os dados!
+                </p>
+              </ng-template>
             </div>
           </div>
         </div>
