@@ -34,21 +34,40 @@
                 </div>
               </ng-container>
               <ng-template #feedbackApiStatus>
-                <img src="assets/svg/spinner.svg"
-                     title="Loading"
-                     alt="Loading"
-                     class="mb-2 img-fluid"
-                     loading="lazy"
-                     width="150"
-                     height="150">
-                <h2>
-                  Obtendo todos os dados!
-                </h2>
-                <p class="mb-0">
-                  Aguarde enquanto buscamos
-                  <br>
-                  todos os dados!
-                </p>
+                <ng-container *ngIf="(userDataApiError$ | async); else loadingData">
+                  <img src="assets/images/ic-dark-mode.png"
+                       title="Loading"
+                       alt="Loading"
+                       class="mb-2 img-fluid"
+                       loading="lazy"
+                       width="100"
+                       height="100">
+                  <h2 class="text-danger">
+                    Não conseguimos obter os dados :(
+                  </h2>
+                  <p class="mb-0">
+                    Não conseguimos obter os dados
+                    <br>
+                    tente novamente mais tarde!
+                  </p>
+                </ng-container>
+                <ng-template #loadingData>
+                  <img src="assets/svg/spinner.svg"
+                       title="Loading"
+                       alt="Loading"
+                       class="mb-2 img-fluid"
+                       loading="lazy"
+                       width="150"
+                       height="150">
+                  <h2>
+                    Obtendo todos os dados!
+                  </h2>
+                  <p class="mb-0">
+                    Aguarde enquanto buscamos
+                    <br>
+                    todos os dados!
+                  </p>
+                </ng-template>
               </ng-template>
             </div>
           </div>
