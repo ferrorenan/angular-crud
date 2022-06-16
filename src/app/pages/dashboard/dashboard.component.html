@@ -5,23 +5,29 @@
         <div class="col-lg-4">
           <div class="card">
             <div class="card-body">
-              <img src="assets/svg/ic-avatar-one.svg"
-                   title="Avatar"
-                   alt="Avatar"
-                   class="mb-2 img-fluid"
-                   loading="lazy"
-                   width="100"
-                   height="100">
-              <h1>
-                Renan Ferro
-              </h1>
-              <p class="mb-2">
-                renan.ferro@fmd.ag
-              </p>
-              <div class="d-grid gap-1">
-                <button class="btn btn-success text-white" type="button">Movies</button>
-                <button class="btn btn-secondary" type="button">Courses</button>
-              </div>
+              <ng-container *ngIf="(userData$ | async) as userData">
+                <img [src]="'assets/svg/'+ userData.avatar +'.svg'"
+                     title="Avatar"
+                     alt="Avatar"
+                     class="mb-2 img-fluid"
+                     loading="lazy"
+                     width="100"
+                     height="100">
+                <h1>
+                  {{ userData.name }}
+                </h1>
+                <p class="mb-2">
+                  {{ userData.email }}
+                </p>
+                <div class="d-grid gap-1">
+                  <button class="btn btn-success text-white"
+                          type="button">Movies
+                  </button>
+                  <button class="btn btn-secondary"
+                          type="button">Courses
+                  </button>
+                </div>
+              </ng-container>
             </div>
           </div>
         </div>
