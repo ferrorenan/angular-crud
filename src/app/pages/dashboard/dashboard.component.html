@@ -3,35 +3,33 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-4">
-          <div class="card">
-            <div class="card-body">
-              <ng-container *ngIf="(userData$ | async) as userData; else feedbackApiStatus">
-                <app-board [iconName]="'svg/'+ userData.avatar +'.svg'"
-                           [title]="userData.name"
-                           [description]="userData.email"></app-board>
-                <div class="mt-2 d-grid gap-1">
-                  <button class="btn btn-success text-white"
-                          type="button">Movies
-                  </button>
-                  <button class="btn btn-secondary"
-                          type="button">Courses
-                  </button>
-                </div>
+          <app-card-panel>
+            <ng-container *ngIf="(userData$ | async) as userData; else feedbackApiStatus">
+              <app-board [iconName]="'svg/'+ userData.avatar +'.svg'"
+                         [title]="userData.name"
+                         [description]="userData.email"></app-board>
+              <div class="mt-2 d-grid gap-1">
+                <button class="btn btn-success text-white"
+                        type="button">Movies
+                </button>
+                <button class="btn btn-secondary"
+                        type="button">Courses
+                </button>
+              </div>
+            </ng-container>
+            <ng-template #feedbackApiStatus>
+              <ng-container *ngIf="(userDataApiError$ | async); else loadingData">
+                <app-board iconName="images/ic-dark-mode.png"
+                           title="Não conseguimos obter os dados :("
+                           description="Não conseguimos obter os dados tente novamente mais tarde!"></app-board>
               </ng-container>
-              <ng-template #feedbackApiStatus>
-                <ng-container *ngIf="(userDataApiError$ | async); else loadingData">
-                  <app-board iconName="images/ic-dark-mode.png"
-                             title="Não conseguimos obter os dados :("
-                             description="Não conseguimos obter os dados tente novamente mais tarde!"></app-board>
-                </ng-container>
-                <ng-template #loadingData>
-                  <app-board iconName="svg/spinner.svg"
-                             title="Obtendo todos os dados!"
-                             description="Aguarde enquanto buscamos todos os dados!"></app-board>
-                </ng-template>
+              <ng-template #loadingData>
+                <app-board iconName="svg/spinner.svg"
+                           title="Obtendo todos os dados!"
+                           description="Aguarde enquanto buscamos todos os dados!"></app-board>
               </ng-template>
-            </div>
-          </div>
+            </ng-template>
+          </app-card-panel>
         </div>
       </div>
     </div>

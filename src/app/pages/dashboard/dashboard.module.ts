@@ -7,6 +7,7 @@ import {
   PanelContentModule
 } from '../../components/panel-content/panel-content.module';
 import { BoardComponent } from './components/board/board.component';
+import { CardPanelModule } from '../../components/card-panel/card-panel.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BoardComponent } from './components/board/board.component';
     CommonModule,
     DashboardRoutingModule,
     PanelContentModule,
+    CardPanelModule,
   ],
 })
 export class DashboardModule { }
