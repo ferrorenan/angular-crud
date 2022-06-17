@@ -11,6 +11,9 @@ import { CardPanelModule } from '../../components/card-panel/card-panel.module';
 import {
   StructureContainerModule
 } from '../../components/structure-container/structure-container.module';
+import {
+  DefaultButtonLinkModule
+} from '../../components/default-button-link/default-button-link.module';
 
 
 @NgModule({
@@ -24,6 +27,7 @@ import {
     PanelContentModule,
     CardPanelModule,
     StructureContainerModule,
+    DefaultButtonLinkModule,
   ],
 })
 export class DashboardModule { }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../../services/user-data.service';
 import { catchError, delay, Observable, Subject } from 'rxjs';
 import { User } from '../../models/user';
+import {
+  ButtonLink
+} from '../../components/default-button-link/models/button-link';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +15,19 @@ export class DashboardComponent implements OnInit {
 
   userData$: Observable<User> | undefined;
   userDataApiError$ = new Subject<boolean>();
+
+  buttonsToNavigate: ButtonLink[] = [
+    {
+      linkButton: 'movies',
+      buttonDescription: 'movies',
+      isRouterLink: false
+    },
+    {
+      linkButton: 'courses',
+      buttonDescription: 'Courses',
+      isRouterLink: false
+    }
+  ]
 
   constructor(
       private getUserDataService: UserDataService

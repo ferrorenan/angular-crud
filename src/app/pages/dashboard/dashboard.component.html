@@ -8,12 +8,11 @@
                        [title]="userData.name"
                        [description]="userData.email"></app-board>
             <div class="mt-2 d-grid gap-1">
-              <button class="btn btn-success text-white"
-                      type="button">Movies
-              </button>
-              <button class="btn btn-secondary"
-                      type="button">Courses
-              </button>
+              <ng-container *ngFor="let buttonNavigation of buttonsToNavigate; let odd = odd">
+                <app-default-button-link [buttonClass]="odd ? 'btn-success' : 'btn-secondary'"
+                                         [buttonConfiguration]="buttonNavigation">
+                </app-default-button-link>
+              </ng-container>
             </div>
           </ng-container>
           <ng-template #feedbackApiStatus>
