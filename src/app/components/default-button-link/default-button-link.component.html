@@ -1,0 +1,8 @@
+<a [attr.href]="buttonConfiguration?.isRouterLink ? null : buttonConfiguration?.linkButton"
+   [attr.routerLink]="buttonConfiguration?.isRouterLink ? buttonConfiguration?.linkButton : null"
+   [attr.target]="buttonConfiguration?.isRouterLink ? '_black' : null"
+   [attr.rel]="buttonConfiguration?.isRouterLink ? null : 'noopener'"
+   [title]="buttonConfiguration?.buttonDescription"
+   class="btn d-block {{ buttonClass }}">
+  {{ buttonConfiguration?.buttonDescription | titlecase }}
+</a>
