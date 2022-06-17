@@ -8,6 +8,9 @@ import {
 } from '../../components/panel-content/panel-content.module';
 import { BoardComponent } from './components/board/board.component';
 import { CardPanelModule } from '../../components/card-panel/card-panel.module';
+import {
+  StructureContainerModule
+} from '../../components/structure-container/structure-container.module';
 
 
 @NgModule({
@@ -20,6 +23,7 @@ import { CardPanelModule } from '../../components/card-panel/card-panel.module';
     DashboardRoutingModule,
     PanelContentModule,
     CardPanelModule,
+    StructureContainerModule,
   ],
 })
 export class DashboardModule { }

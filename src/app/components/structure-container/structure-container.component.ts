@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class StructureContainerComponent implements OnInit {
 
-  @Input() additionalRowClass = '';
+  @Input() additionalRowClass = 'justify-content-lg-center';
 
   constructor() { }
 
