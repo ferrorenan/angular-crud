@@ -5,7 +5,14 @@ import { DashboardComponent } from './dashboard.component';
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'movies',
+        loadChildren: () => import('./pages/movies/movies.module')
+            .then(module => module.MoviesModule)
+      }
+    ]
   }
 ];
 
