@@ -6,13 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    children: [
-      {
-        path: 'movies',
-        loadChildren: () => import('./pages/movies/movies.module')
-            .then(module => module.MoviesModule)
-      }
-    ]
+  },
+  {
+    path: 'movies',
+    loadChildren: () => import('./pages/movies/movies.module')
+        .then(module => module.MoviesModule)
   }
 ];
 
