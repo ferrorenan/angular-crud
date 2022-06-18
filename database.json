@@ -6,13 +6,16 @@
   },
   "movies": [
     {
-      "name": "Fast and Furious 1"
+      "name": "Fast and Furious 1",
+      "likes": 5
     },
     {
-      "name": "Fast and Furious 2"
+      "name": "Fast and Furious 2",
+      "likes": 3
     },
     {
-      "name": "Fast and Furious 3"
+      "name": "Fast and Furious 3",
+      "likes": 8
     }
   ]
 }
