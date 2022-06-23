@@ -1,1 +1,21 @@
-<p>movies works!</p>
+<app-panel-content>
+  <div>
+    <app-button-back [routerLink]="'/dashboard'"></app-button-back>
+    <app-structure-container>
+      <div class="col-lg-6">
+        <ng-container *ngIf="(movies$ | async) as movies; else statusApiTemplate">
+          <div [@listAnimation]="movies.length">
+            <ng-container *ngFor="let movie of movies">
+              <div class="mb-1">
+                <app-card [card]="movie"></app-card>
+              </div>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <ng-template #statusApiTemplate>
+        dsdas
+      </ng-template>
+    </app-structure-container>
+  </div>
+</app-panel-content>
