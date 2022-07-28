@@ -1,5 +1,6 @@
 <a [attr.href]="buttonConfiguration?.isRouterLink ? null : buttonConfiguration?.linkButton"
-   [attr.routerLink]="buttonConfiguration?.isRouterLink ? buttonConfiguration?.linkButton : null"
+   routerLink="/dashboard/movies"
+   [attr.routerLink]="buttonConfiguration?.isRouterLink ? ['/'+buttonConfiguration?.linkButton] : null"
    [attr.target]="buttonConfiguration?.isRouterLink ? null : '_blank'"
    [attr.rel]="buttonConfiguration?.isRouterLink ? null : 'noopener'"
    [title]="buttonConfiguration?.buttonDescription"

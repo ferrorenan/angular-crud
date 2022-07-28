@@ -3,8 +3,38 @@
     <h2 class="card-title">
       {{ card?.name }}
     </h2>
-    <p>
+    <span>
+      <img src="assets/svg/ic-heart.svg"
+           title="Likes"
+           alt="Likes"
+           class="img-fluid"
+           loading="lazy"
+           width="30"
+           height="30">
       {{ card?.likes }}
-    </p>
+    </span>
+    <div>
+      <a role="button"
+         (click)="clickEditButton(card?.name)"
+         class="me-1 d-inline-block">
+        <img src="assets/svg/ic-edit.svg"
+             title="Edit"
+             alt="Edit"
+             class="img-fluid"
+             loading="lazy"
+             width="45"
+             height="45">
+      </a>
+      <a role="button"
+         class="d-inline-block">
+        <img src="assets/svg/ic-remove.svg"
+             title="Edit"
+             alt="Edit"
+             class="img-fluid"
+             loading="lazy"
+             width="45"
+             height="45">
+      </a>
+    </div>
   </div>
 </div>

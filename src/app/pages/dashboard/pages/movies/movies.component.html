@@ -2,12 +2,12 @@
   <div>
     <app-button-back [routerLink]="'/dashboard'"></app-button-back>
     <app-structure-container>
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <ng-container *ngIf="(movies$ | async) as movies; else statusApiTemplate">
           <div [@listAnimation]="movies.length">
             <ng-container *ngFor="let movie of movies">
               <div class="mb-1">
-                <app-card [card]="movie"></app-card>
+                <app-card [card]="movie" (editEvent)="editMovies($event)"></app-card>
               </div>
             </ng-container>
           </div>

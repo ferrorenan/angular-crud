@@ -28,4 +28,9 @@ export class MoviesComponent implements OnInit {
 
     this.movies$ = this._moviesService.getMovies();
   }
+
+  editMovies(movieId: string): void {
+
+    console.log(movieId);
+  }
 }
