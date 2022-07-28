@@ -1,0 +1,42 @@
+<app-panel-content additionalClass="pt-2 pb-4 py-lg-0">
+  <app-structure-container additionalRowClass="align-items-lg-center justify-content-around">
+    <div class="col-lg-4">
+      <img src="assets/svg/ic-world.svg"
+           title="Welcome"
+           alt="Welcome"
+           class="mb-2 mb-lg-0 img-fluid word-animation"
+           loading="lazy"
+           width="518"
+           height="518">
+    </div>
+    <div class="col-lg-4">
+      <app-card-panel>
+        <h1 class="display-7">
+          There are some things
+          <br>
+          you need to do!
+        </h1>
+        <ul class="mb-3 text-start list-unstyled">
+          <ng-container *ngFor="let listItem of toDoList">
+            <li>
+              <img src="assets/svg/ic-check.svg"
+                   [title]="listItem.title"
+                   [alt]="listItem.title"
+                   class="img-fluid"
+                   loading="lazy"
+                   width="26"
+                   height="26">
+              {{ listItem.title }}
+            </li>
+          </ng-container>
+        </ul>
+        <div class="d-grid">
+          <button routerLink="dashboard"
+                  class="btn d-block btn-secondary">
+            GO
+          </button>
+        </div>
+      </app-card-panel>
+    </div>
+  </app-structure-container>
+</app-panel-content>

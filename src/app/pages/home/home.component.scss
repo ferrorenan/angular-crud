@@ -1,0 +1,26 @@
+@import "~src/resources/sass/frontend/breakpoint-dependencies";
+
+@include media-breakpoint-up(lg) {
+
+  .word-animation {
+    transition: all .3s cubic-bezier(0,0,.5,1);
+    animation: wordAnimation 3s infinite;
+  }
+}
+
+@keyframes wordAnimation {
+  0% {
+
+    transform: scale3d(1,1,1);
+  }
+
+  50% {
+
+    transform: scale3d(1.04,1.04,1.04);
+  }
+
+  100% {
+
+    transform: scale3d(1,1,1);
+  }
+}
