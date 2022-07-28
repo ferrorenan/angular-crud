@@ -590,7 +590,7 @@ $font-size-lg:                $font-size-base * 1.25 !default;
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           400 !default;
 $font-weight-normal:          600 !default;
-$font-weight-bold:            700 !default;
+$font-weight-bold:            800 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-light !default;
@@ -619,7 +619,7 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * 1 !default;
+$headings-margin-bottom:      $spacer * 2 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        $font-weight-bold !default;
@@ -634,10 +634,11 @@ $display-font-sizes: (
     3: 4rem,
     4: 3.5rem,
     5: 3rem,
-    6: 2.5rem
+    6: 2.5rem,
+    7: 1rem,
 ) !default;
 
-$display-font-weight: 300 !default;
+$display-font-weight: $headings-font-weight !default;
 $display-line-height: $headings-line-height !default;
 // scss-docs-end display-headings
 
