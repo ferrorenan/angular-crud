@@ -1,40 +1,54 @@
 <div class="card">
-  <div class="py-1 card-body">
-    <h2 class="card-title">
-      {{ card?.name }}
-    </h2>
-    <span>
-      <img src="assets/svg/ic-heart.svg"
-           title="Likes"
-           alt="Likes"
-           class="img-fluid"
-           loading="lazy"
-           width="30"
-           height="30">
-      {{ card?.likes }}
-    </span>
-    <div>
-      <a role="button"
-         (click)="clickEditButton(card?.name)"
-         class="me-1 d-inline-block">
-        <img src="assets/svg/ic-edit.svg"
-             title="Edit"
-             alt="Edit"
-             class="img-fluid"
-             loading="lazy"
-             width="45"
-             height="45">
-      </a>
-      <a role="button"
-         class="d-inline-block">
-        <img src="assets/svg/ic-remove.svg"
-             title="Edit"
-             alt="Edit"
-             class="img-fluid"
-             loading="lazy"
-             width="45"
-             height="45">
-      </a>
+  <div class="card-body">
+    <div class="row align-items-lg-center">
+      <div class="col-lg-auto">
+        <app-icon imageClass="img-avatar"
+                  [pathImage]="card?.avatar"
+                  [width]="50"
+                  [height]="50"></app-icon>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="card-title">
+          {{ card?.name }}
+        </h2>
+      </div>
+      <div class="ms-lg-auto col-lg-2">
+        <span>
+          <img src="assets/svg/ic-heart.svg"
+               title="Likes"
+               alt="Likes"
+               class="img-fluid"
+               loading="lazy"
+               width="30"
+               height="30">
+          {{ card?.likes }}
+        </span>
+      </div>
+      <div class="col-lg-1">
+        <a role="button"
+           (click)="clickEditButton(card?.name)"
+           class="d-block">
+          <img src="assets/svg/ic-edit.svg"
+               title="Edit"
+               alt="Edit"
+               class="img-fluid"
+               loading="lazy"
+               width="45"
+               height="45">
+        </a>
+      </div>
+      <div class="col-lg-1">
+        <a role="button"
+           class="d-inline-block">
+          <img src="assets/svg/ic-remove.svg"
+               title="Edit"
+               alt="Edit"
+               class="img-fluid"
+               loading="lazy"
+               width="45"
+               height="45">
+        </a>
+      </div>
     </div>
   </div>
 </div>
