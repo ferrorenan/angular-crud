@@ -7,11 +7,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module')
         .then(module => module.HomeModule),
     pathMatch: 'full',
+    title: 'Welcome'
   },
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module')
         .then(module => module.DashboardModule),
+    title: 'Home'
   }
 ];
 
