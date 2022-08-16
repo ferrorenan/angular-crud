@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AbstractionApiService } from './abstraction-api.service';
 import { Movies } from '../models/movies';
+import { Card } from '../models/card';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class MoviesService {
       private _abstractionApi: AbstractionApiService
   ) { }
 
-  getMovies(): Observable<Movies[]> {
+  getMovies(): Observable<Card[]> {
     return this._abstractionApi
         .get('movies')
-        // .pipe(
-        //     tap(response => console.log(response))
-        // )
+        .pipe(
+            tap(response => console.log(response))
+        )
   }
 }
