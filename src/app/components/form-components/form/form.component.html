@@ -1,0 +1,29 @@
+<form class="text-start"
+      [formGroup]="this.formulary">
+  <div class="form-row">
+    <div class="col">
+      <div class="mb-1">
+        <app-form-input-text formControlName="name"
+                             inputName="name"
+                             labelDescription="Name"
+                             [classInput]="applyClassStyleError('name')"
+                             [control]="getField('name')"></app-form-input-text>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-2">
+        <app-form-input-text formControlName="lastName"
+                             inputName="lastName"
+                             labelDescription="Last name"
+                             [classInput]="applyClassStyleError('lastName')"
+                             [control]="getField('lastName')"></app-form-input-text>
+      </div>
+    </div>
+  </div>
+  <div class="d-grid">
+    <button class="btn btn-secondary"
+            (click)="validateFormulary()">
+      Enviar
+    </button>
+  </div>
+</form>
