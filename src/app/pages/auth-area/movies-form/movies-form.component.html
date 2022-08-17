@@ -6,7 +6,7 @@
           <h2>
             New Movie
           </h2>
-          <app-form (formValueOutput)="this.getFormValue($event)"></app-form>
+          <app-form (formValueOutput)="this.getFormValue($event); insertNewMovie()"></app-form>
         </app-card-panel>
       </div>
     </app-structure-container>

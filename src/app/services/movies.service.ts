@@ -20,4 +20,9 @@ export class MoviesService {
             tap(response => console.log(response))
         )
   }
+
+  insertMovies(movieData: any): Observable<any> {
+    return this._abstractionApi
+        .post('movies', movieData)
+  }
 }

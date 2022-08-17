@@ -15,4 +15,9 @@ export class AbstractionApiService {
     return this._httpClient
         .get<any>(`${environment.urlApi}/${pathEndpoint}`)
   }
+
+  post(pathEndpoint: string, bodyData: any) {
+    return this._httpClient
+        .post<any>(`${environment.urlApi}/${pathEndpoint}`, bodyData)
+  }
 }

@@ -26,7 +26,7 @@ export class FormComponent extends BaseFormComponent implements OnInit {
 
     this.formulary = this._formBuilder.group({
       name: [null, [Validators.required]],
-      lastName: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
     });
   }
 

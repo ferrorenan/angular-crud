@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from '../../../services/movies.service';
 
 @Component({
   selector: 'app-movies-form',
@@ -7,12 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesFormComponent implements  OnInit {
 
-  constructor() {}
+  formData = '';
+
+  constructor(
+      private _moviesService: MoviesService
+  ) {}
 
   ngOnInit(): void {}
 
   getFormValue(formValue: any): void {
 
-    console.log(formValue);
+    this.formData = formValue
+    console.log(this.formData);
+  }
+
+  insertNewMovie(): void {
+
+    this._moviesService.insertMovies(this.formData)
+        .subscribe({
+          next: ((response) => {
+            console.log(response);
+          }),
+          error: ((error) => {
+            console.log(error);
+          }),
+          complete: (() => {
+            console.log('deu');
+          })
+        })
   }
 }
