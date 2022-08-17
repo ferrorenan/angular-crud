@@ -5,17 +5,17 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
 import {
   PanelContentModule
-} from '../../../../components/panel-content/panel-content.module';
+} from '../../../components/panel-content/panel-content.module';
 import {
   StructureContainerModule
-} from '../../../../components/structure-container/structure-container.module';
+} from '../../../components/structure-container/structure-container.module';
 import {
   ButtonBackModule
-} from '../../../../components/button-back/button-back.module';
-import { CardModule } from '../../components/card/card.module';
+} from '../../../components/button-back/button-back.module';
+import { CardModule } from '../dashboard/components/card/card.module';
 import {
   CardPanelModule
-} from '../../../../components/card-panel/card-panel.module';
+} from '../../../components/card-panel/card-panel.module';
 
 
 @NgModule({

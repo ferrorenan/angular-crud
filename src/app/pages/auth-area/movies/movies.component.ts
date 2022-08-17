@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../../../services/movies.service';
-import { Movies } from '../../../../models/movies';
-import { Observable, take } from 'rxjs';
-import { animateListItems } from '../../../../animations/animations';
-import { Card } from '../../../../models/card';
+import { Observable, take } from 'rxjs'
+import { animateListItems } from '../../../animations/animations';
+import { Card } from '../../../models/card';
+import { MoviesService } from '../../../services/movies.service';
 
 @Component({
   selector: 'app-movies',

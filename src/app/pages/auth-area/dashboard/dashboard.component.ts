@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from '../../services/user-data.service';
 import { catchError, delay, Observable, Subject } from 'rxjs';
-import { User } from '../../models/user';
+import { User } from '../../../models/user';
 import {
   ButtonLink
-} from '../../components/default-button-link/models/button-link';
+} from '../../../components/default-button-link/models/button-link';
+import { UserDataService } from '../../../services/user-data.service';
 
 @Component({
   selector: 'app-dashboard',

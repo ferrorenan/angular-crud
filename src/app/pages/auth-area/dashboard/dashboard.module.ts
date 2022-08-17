@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { BoardComponent } from './components/board/board.component';
 import {
   PanelContentModule
-} from '../../components/panel-content/panel-content.module';
-import { BoardComponent } from './components/board/board.component';
-import { CardPanelModule } from '../../components/card-panel/card-panel.module';
+} from '../../../components/panel-content/panel-content.module';
+import {
+  CardPanelModule
+} from '../../../components/card-panel/card-panel.module';
 import {
   StructureContainerModule
-} from '../../components/structure-container/structure-container.module';
+} from '../../../components/structure-container/structure-container.module';
 import {
   DefaultButtonLinkModule
-} from '../../components/default-button-link/default-button-link.module';
+} from '../../../components/default-button-link/default-button-link.module';
 
 
 @NgModule({
