@@ -1,0 +1,13 @@
+<div class="form-floating">
+  <input type="text"
+         class="form-control"
+         [placeholder]="labelDescription"
+         [id]="inputName"
+         [(ngModel)]="value"
+         [ngClass]="classInput">
+  <label [for]="inputName">
+    {{ labelDescription }}
+  </label>
+  <app-form-error-message [fieldName]="labelDescription"
+                          [control]="control"></app-form-error-message>
+</div>
