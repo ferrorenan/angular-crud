@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { BoardComponent } from './components/board/board.component';
 import {
   PanelContentModule
 } from '../../../components/panel-content/panel-content.module';
@@ -16,12 +15,12 @@ import {
 import {
   DefaultButtonLinkModule
 } from '../../../components/default-button-link/default-button-link.module';
+import { BoardModule } from '../../../components/board/board.module';
 
 
 @NgModule({
   declarations: [
       DashboardComponent,
-      BoardComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +29,7 @@ import {
     CardPanelModule,
     StructureContainerModule,
     DefaultButtonLinkModule,
+    BoardModule
   ],
 })
 export class DashboardModule { }
