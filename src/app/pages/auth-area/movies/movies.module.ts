@@ -11,11 +11,12 @@ import {
 } from '../../../components/structure-container/structure-container.module';
 import {
   ButtonBackModule
-} from '../../../components/button-back/button-back.module';
-import { CardModule } from '../dashboard/components/card/card.module';
+} from '../../../components/button-back/button-back.module';;
 import {
   CardPanelModule
 } from '../../../components/card-panel/card-panel.module';
+import { CardModule } from '../../../components/card/card.module';
+import { FabModule } from '../../../components/fab/fab.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {
     ButtonBackModule,
     CardModule,
     CardPanelModule,
+    FabModule,
   ],
 })
 export class MoviesModule { }
