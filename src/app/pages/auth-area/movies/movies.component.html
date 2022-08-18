@@ -1,22 +1,26 @@
-<app-panel-content>
-  <div>
-    <app-button-back [routerLink]="'/dashboard'"></app-button-back>
-    <app-structure-container>
-      <div class="col-lg-8">
-        <ng-container *ngIf="(movies$ | async) as movies; else statusApiTemplate">
-          <div [@listAnimation]="movies.length">
-            <ng-container *ngFor="let movie of movies">
-              <div class="mb-1">
-                <app-card [card]="movie" (editEvent)="editMovies($event)"></app-card>
-              </div>
-            </ng-container>
-          </div>
-        </ng-container>
+<app-panel-content additionalClass="pt-3 pt-lg-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-auto">
+        <app-button-back [routerLink]="'/dashboard'"></app-button-back>
       </div>
-      <ng-template #statusApiTemplate>
-        dsdas
-      </ng-template>
-    </app-structure-container>
+    </div>
   </div>
+  <app-structure-container>
+    <div class="col-lg-8">
+      <ng-container *ngIf="(movies$ | async) as movies; else statusApiTemplate">
+        <div [@listAnimation]="movies.length">
+          <ng-container *ngFor="let movie of movies">
+            <div class="mb-1">
+              <app-card [card]="movie" (editEvent)="editMovies($event)"></app-card>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+    <ng-template #statusApiTemplate>
+      dsdas
+    </ng-template>
+  </app-structure-container>
   <app-fab rounterLink="novo"></app-fab>
 </app-panel-content>
