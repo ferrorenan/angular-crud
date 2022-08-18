@@ -1,4 +1,9 @@
 .header {
 
-  background-color: #151414;
+  //background-color: #151414;
+  position: fixed;
+  backdrop-filter: saturate(50%) blur(8px);
+  background: rgba(23,22,24,.7);
+  width: 100%;
+  z-index: 8;
 }
