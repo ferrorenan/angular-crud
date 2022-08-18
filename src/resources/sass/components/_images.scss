@@ -1,0 +1,19 @@
+.img {
+	&-sanitize {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		@extend .img-fluid;
+	}
+	
+	&-cover {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		
+		&-width {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+}
