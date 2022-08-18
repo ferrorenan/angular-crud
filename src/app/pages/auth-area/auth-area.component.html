@@ -1,2 +1,4 @@
-<app-button-back [routerLink]="'/dashboard'"></app-button-back>
-<router-outlet></router-outlet>
+<!--<main [@routerAnimations]="prepareRoute(outlet)">
+</main>-->
+<app-header></app-header>
+<router-outlet #outlet="outlet"></router-outlet>
