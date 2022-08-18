@@ -4,9 +4,9 @@
       <div class="col-lg-4">
         <app-card-panel>
           <ng-container *ngIf="(userData$ | async) as userData; else feedbackApiStatus">
-            <app-board [iconName]="'svg/'+ userData.avatar +'.svg'"
-                       [title]="userData.name"
-                       [description]="userData.email"></app-board>
+            <app-board [iconName]="'svg/ic-avatar-two.svg'"
+                       title="Our All Options"
+                       description="See our all data to you to navigate"></app-board>
             <div class="mt-2 d-grid gap-1">
               <ng-container *ngFor="let buttonNavigation of buttonsToNavigate; let odd = odd">
                 <app-default-button-link [buttonClass]="odd ? 'btn-success' : 'btn-secondary'"

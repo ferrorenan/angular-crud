@@ -10,7 +10,10 @@ const routes: Routes = [
   {
     path: 'movies',
     loadChildren: () => import('../movies/movies.module')
-        .then(module => module.MoviesModule)
+        .then(module => module.MoviesModule),
+    data: {
+      animation: 'isRight'
+    }
   },
 ];
 
