@@ -16,6 +16,7 @@ import {
   DefaultButtonLinkModule
 } from '../../../components/default-button-link/default-button-link.module';
 import { BoardModule } from '../../../components/board/board.module';
+import { IconModule } from '../../../components/icon/icon.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { BoardModule } from '../../../components/board/board.module';
     CardPanelModule,
     StructureContainerModule,
     DefaultButtonLinkModule,
-    BoardModule
+    BoardModule,
+    IconModule,
   ],
 })
 export class DashboardModule { }
