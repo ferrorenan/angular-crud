@@ -1,40 +1,41 @@
 <app-panel-content additionalClass="pt-2 pb-4 py-lg-0">
-  <app-structure-container additionalRowClass="align-items-lg-center justify-content-around">
-    <div class="col-lg-4">
-      <img src="assets/svg/ic-world.svg"
+  <app-structure-container additionalRowClass="align-items-lg-center justify-content-center justify-content-lg-around">
+    <div class="col-10 col-lg-4">
+      <img src="assets/svg/ic-avatar-one.svg"
            title="Welcome"
            alt="Welcome"
-           class="mb-2 mb-lg-0 img-fluid word-animation"
-           loading="lazy"
-           width="518"
-           height="518">
+           class="img-cover word-animation"
+           loading="lazy">
     </div>
-    <div class="col-lg-4">
+    <div class="mt-2 mt-lg-0 col-lg-6">
+      <h1>
+        A simple Angular CRUD
+      </h1>
+      <p class="mb-3">
+        A simple Angular CRUD project with some and cools tecnologies!
+      </p>
       <app-card-panel>
-        <h1 class="display-7">
-          There are some things
-          <br>
-          you need to do!
-        </h1>
-        <ul class="mb-3 text-start list-unstyled">
+        <h2 class="display-7">
+          Tecnologies
+        </h2>
+        <ul class="mb-2 mb-lg-3 text-start list-unstyled d-flex justify-content-center">
           <ng-container *ngFor="let listItem of toDoList">
             <li>
-              <img src="assets/svg/ic-check.svg"
+              <img [src]="'assets/svg/logo-'+listItem.name+'.svg'"
                    [title]="listItem.title"
                    [alt]="listItem.title"
-                   class="img-fluid"
+                   class="mx-1 img-fluid tecnologie-logo"
                    loading="lazy"
-                   width="26"
-                   height="26">
-              {{ listItem.title }}
+                   width="40"
+                   height="40">
             </li>
           </ng-container>
         </ul>
         <div class="d-grid">
-          <button routerLink="dashboard"
-                  class="btn d-block btn-secondary">
+          <a routerLink="/dashboard"
+             class="btn d-block btn-secondary">
             GO
-          </button>
+          </a>
         </div>
       </app-card-panel>
     </div>

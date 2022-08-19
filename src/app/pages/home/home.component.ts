@@ -3,6 +3,7 @@ import { Typography } from '../../models/typography';
 import { catchError, delay, Observable, Subject } from 'rxjs';
 import { User } from '../../models/user';
 import { UserDataService } from '../../services/user-data.service';
+import { Icon } from '../../models/icon';
 
 @Component({
   selector: 'app-home',
@@ -13,19 +14,27 @@ export class HomeComponent implements OnInit {
 
   userData$?: Observable<User>;
 
-  toDoList: Typography[] = [
+  toDoList: Icon[] = [
     {
-      title: 'Execute NPM Install',
+      name: 'angular',
+      title: 'Angular'
     },
     {
-      title: 'Execute ng serve',
+      name: 'typescript',
+      title: 'Typescript'
     },
     {
-      title: 'json-server --watch database.json',
+      name: 'sass',
+      title: 'Sass'
     },
     {
-      title: 'Click on the Button :D',
-    }
+      name: 'rxjs',
+      title: 'RxJs'
+    },
+    {
+      name: 'ngrx',
+      title: 'NgRx'
+    },
   ]
 
   constructor() { }
