@@ -1,0 +1,19 @@
+.custom-toogle {
+
+  margin: 0 .20rem 0 .5rem;
+}
+
+.form-switch {
+
+  .form-check-input {
+
+    background-image: url("~src/assets/svg/light.svg");
+
+    &:checked {
+
+      background-image: url("~src/assets/svg/lua.svg");
+    }
+  }
+
+}
+
