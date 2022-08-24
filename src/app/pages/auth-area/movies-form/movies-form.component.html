@@ -3,9 +3,12 @@
     <app-structure-container>
       <div class="col-lg-5">
         <app-card-panel>
-          <h2>
+          <h2 class="mb-1">
             Novo item da compra
           </h2>
+          <p class="mb-2">
+            Insira o novo item e a quantidade para ser comprado!
+          </p>
           <app-form (formValueOutput)="this.getFormValue($event); insertNewMovie()"></app-form>
         </app-card-panel>
       </div>
