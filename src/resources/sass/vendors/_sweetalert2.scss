@@ -1,0 +1,71 @@
+@import "~sweetalert2/src/sweetalert2";
+
+.swal2 {
+
+  &-title {
+
+    color: $primary !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.5rem !important;
+    position: relative;
+  }
+
+  &-modal {
+
+    border-radius: 25px !important;
+  }
+
+  &-close {
+
+    box-shadow: unset !important;
+    color: $primary !important;
+    margin: .5rem .5rem 0 0;
+  }
+
+  &-html-container {
+
+    color: $primary;
+    font-size: .825rem !important;
+    margin-top: unset !important;
+    line-height: 160% !important;
+    margin-bottom: 1.5rem;
+  }
+
+  &-icon-error {
+
+    .swal2-title {
+
+      &:after {
+        content: '';
+        background-color: $danger;
+      }
+    }
+  }
+
+  &-icon-success {
+
+    .swal2-title {
+
+      &:after {
+        content: '';
+        background-color: $success;
+      }
+    }
+  }
+
+  &-icon.swal2-success .swal2-success-ring {
+
+    border: 0.25em solid rgba(0,207,123,.3) !important;
+  }
+
+  &-icon.swal2-success [class^=swal2-success-line] {
+
+    background-color: $success !important;
+  }
+
+  &-backdrop-show {
+
+    background: rgba(0, 0, 0, 0.6) !important;
+  }
+}
+
