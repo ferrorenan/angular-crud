@@ -17,6 +17,9 @@ import {
 } from '../../../components/card-panel/card-panel.module';
 import { CardModule } from '../../../components/card/card.module';
 import { FabModule } from '../../../components/fab/fab.module';
+import {
+  LoadingDataModule
+} from '../../../components/loading-data/loading-data.module';
 
 
 @NgModule({
@@ -32,6 +35,7 @@ import { FabModule } from '../../../components/fab/fab.module';
     CardModule,
     CardPanelModule,
     FabModule,
+    LoadingDataModule,
   ],
 })
 export class MoviesModule { }
