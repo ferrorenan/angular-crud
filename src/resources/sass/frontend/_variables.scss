@@ -43,7 +43,7 @@ $pink:    #d63384 !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
-$green:   #198754 !default;
+$green: #058039 !default;
 $teal:    #20c997 !default;
 $cyan:    #0dcaf0 !default;
 // scss-docs-end color-variables
@@ -901,16 +901,16 @@ $form-check-transition:                   null !default;
 
 $form-check-input-active-filter:          brightness(90%) !default;
 
-$form-check-input-bg:                     $input-bg !default;
-$form-check-input-border:                 1px solid rgba($black, .25) !default;
+$form-check-input-bg:                     $gray-900 !default;
+$form-check-input-border:                 1px solid rgba($white, .25) !default;
 $form-check-input-border-radius:          .25em !default;
 $form-check-radio-border-radius:          50% !default;
 $form-check-input-focus-border:           $input-focus-border-color !default;
 $form-check-input-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 
 $form-check-input-checked-color:          $component-active-color !default;
-$form-check-input-checked-bg-color:       $component-active-bg !default;
-$form-check-input-checked-border-color:   $form-check-input-checked-bg-color !default;
+$form-check-input-checked-bg-color:       $gray-900 !default;
+$form-check-input-checked-border-color:   $success !default;
 $form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>") !default;
 $form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>") !default;
 
@@ -928,17 +928,17 @@ $form-check-inline-margin-end:    1rem !default;
 
 // scss-docs-start form-switch-variables
 $form-switch-color:               rgba($black, .25) !default;
-$form-switch-width:               2em !default;
+$form-switch-width:               4em !default;
 $form-switch-padding-start:       $form-switch-width + .5em !default;
 $form-switch-bg-image:            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>") !default;
 $form-switch-border-radius:       $form-switch-width !default;
 $form-switch-transition:          background-position .15s ease-in-out !default;
 
 $form-switch-focus-color:         $input-focus-border-color !default;
-$form-switch-focus-bg-image:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-focus-color}'/></svg>") !default;
+$form-switch-focus-bg-image:      url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <circle cx='12' cy='12' r='3.4' fill=''#7E869E'' fill-opacity='0.25' stroke='white' stroke-width='1.2'/> <path d='M12 5V3' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M12 21V19' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M16.9497 7.05026L18.364 5.63605' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M5.63602 18.364L7.05023 16.9498' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M19 12L21 12' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M3 12L5 12' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M16.9497 16.9497L18.364 18.364' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M5.63602 5.63602L7.05023 7.05023' stroke='white' stroke-width='1.2' stroke-linecap='round'/> </svg>") !default;
 
 $form-switch-checked-color:       $component-active-color !default;
-$form-switch-checked-bg-image:    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-checked-color}'/></svg>") !default;
+$form-switch-checked-bg-image:    url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <circle cx='12' cy='12' r='3.4' fill=''#7E869E'' fill-opacity='0.25' stroke='white' stroke-width='1.2'/> <path d='M12 5V3' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M12 21V19' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M16.9497 7.05026L18.364 5.63605' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M5.63602 18.364L7.05023 16.9498' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M19 12L21 12' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M3 12L5 12' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M16.9497 16.9497L18.364 18.364' stroke='white' stroke-width='1.2' stroke-linecap='round'/> <path d='M5.63602 5.63602L7.05023 7.05023' stroke='white' stroke-width='1.2' stroke-linecap='round'/> </svg>") !default;
 $form-switch-checked-bg-position: right center !default;
 // scss-docs-end form-switch-variables
 
@@ -1121,7 +1121,7 @@ $navbar-brand-height:               $navbar-brand-font-size * $line-height-base 
 $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) * .5 !default;
 $navbar-brand-margin-end:           1rem !default;
 
-$navbar-toggler-padding-y:          .25rem !default;
+$navbar-toggler-padding-y:          1rem !default;
 $navbar-toggler-padding-x:          .75rem !default;
 $navbar-toggler-font-size:          $font-size-lg !default;
 $navbar-toggler-border-radius:      $btn-border-radius !default;
