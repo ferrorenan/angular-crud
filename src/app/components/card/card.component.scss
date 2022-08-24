@@ -1,3 +1,5 @@
+@import "~src/resources/sass/frontend/breakpoint-dependencies";
+
 .card {
 
   &-body {
@@ -8,6 +10,11 @@
   &-title {
 
     font-size: 1.5rem;
-    margin-bottom: 0;
+    margin-bottom: 1.25rem;
+
+    @include media-breakpoint-up(lg) {
+
+      margin-bottom: 0;
+    }
   }
 }

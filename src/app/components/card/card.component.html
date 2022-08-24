@@ -1,32 +1,26 @@
 <div class="card">
   <div class="card-body">
-    <div class="row align-items-lg-center">
-      <!--<div class="col-lg-auto">
-        <app-icon imageClass="img-avatar"
-                  [pathImage]="card?.avatar"
-                  [width]="50"
-                  [height]="50"></app-icon>
-      </div>-->
+    <div class="row align-items-center">
       <div class="col-lg-6">
         <h2 class="text-white card-title">
-          {{ card?.name }}
+          {{ card.name }}
         </h2>
       </div>
-      <div class="ms-lg-auto col-lg-2">
+      <div class="col-4 align-self-center">
+        <img src="assets/svg/ic-boxes.svg"
+             title="Quantidade"
+             alt="Quantidade"
+             class="me-1 img-fluid"
+             loading="lazy"
+             width="30"
+             height="30">
         <span>
-          <img src="assets/svg/ic-heart.svg"
-               title="Likes"
-               alt="Likes"
-               class="img-fluid"
-               loading="lazy"
-               width="30"
-               height="30">
-          {{ card?.likes }}
+          {{ card.quantity }}
         </span>
       </div>
-      <div class="col-lg-1">
+      <div class="ms-auto col-auto">
         <a role="button"
-           (click)="clickEditButton(card?.name)"
+           (click)="clickEditButton(card.name)"
            class="d-block">
           <img src="assets/svg/ic-edit.svg"
                title="Edit"
@@ -37,7 +31,7 @@
                height="45">
         </a>
       </div>
-      <div class="col-lg-1">
+      <div class="col-auto">
         <a role="button"
            class="d-inline-block">
           <img src="assets/svg/ic-remove.svg"

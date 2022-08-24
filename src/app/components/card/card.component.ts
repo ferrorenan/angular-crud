@@ -8,7 +8,7 @@ import { Card } from '../../models/card';
 })
 export class CardComponent implements OnInit {
 
-  @Input() card: Card | undefined;
+  @Input() card!: Card;
 
   @Output() editEvent = new EventEmitter<string>();
 
