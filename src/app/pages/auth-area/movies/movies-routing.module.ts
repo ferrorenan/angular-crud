@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: MoviesComponent,
-    title: 'Movies'
+    title: 'Lista de compra'
   },
   {
     path: 'novo',
