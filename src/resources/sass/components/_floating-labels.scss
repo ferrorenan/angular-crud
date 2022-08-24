@@ -5,6 +5,7 @@ $form-floating-label-padding: $form-floating-padding-y $form-floating-padding-x;
 $form-floating-font-size: $input-font-size;
 $form-floating-label-bg: none;
 $form-floating-border-radius: 0;
+$form-floating-label-bg-selected: $primary;
 
 @if $enable-floating-label-over-the-line {
 	$form-floating-height: $input-height;
@@ -18,7 +19,8 @@ $form-floating-border-radius: 0;
 	$form-floating-label-left: $input-padding-x - 0.5rem;
 	$form-floating-label-opacity: 1;
 	$form-floating-label-bg: $input-bg;
-	$form-floating-label-transform: scale(.85) translateY(-.75rem) translateX(.15rem);
+	$form-floating-label-bg-selected: $primary;
+	$form-floating-label-transform: scale(.85) translateY(-.75rem) translateX(1rem);
 	$form-floating-transition: $transition-base;
 	$form-floating-border-radius: $border-radius-pill
 }
@@ -47,6 +49,7 @@ $form-floating-border-radius: 0;
 		margin: auto;
 		font-size: $form-floating-font-size;
 		border-radius: $form-floating-border-radius;
+		color: $primary;
 	}
 
 	// stylelint-disable no-duplicate-selectors
@@ -77,6 +80,7 @@ $form-floating-border-radius: 0;
 			top: 0;
 			opacity: $form-floating-label-opacity;
 			transform: $form-floating-label-transform;
+			color: $form-floating-label-bg-selected;
 		}
 	}
 	// Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
