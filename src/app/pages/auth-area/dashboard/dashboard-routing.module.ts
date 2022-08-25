@@ -15,6 +15,14 @@ const routes: Routes = [
       animation: 'isRight'
     }
   },
+  {
+    path: 'lista',
+    loadChildren: () => import('../market-list/market-list.module')
+        .then(module => module.MarketListModule),
+    data: {
+      animation: 'isRight'
+    }
+  },
 ];
 
 @NgModule({
