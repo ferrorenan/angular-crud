@@ -8,7 +8,7 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   {
-    path: 'lista',
+    path: 'market-list',
     loadChildren: () => import('../market-list/market-list.module')
         .then(module => module.MarketListModule),
     data: {
