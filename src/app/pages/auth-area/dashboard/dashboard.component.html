@@ -1,57 +1,27 @@
 <app-panel-content>
-  <section>
-    <app-structure-container additionalRowClass="align-items-lg-center justify-content-center justify-content-lg-between">
-      <!--<div class="col-lg-6">
-        <app-card-panel>
-          <ng-container *ngIf="(userData$ | async) as userData; else feedbackApiStatus">
-            <app-board [iconName]="'svg/ic-avatar-two.svg'"
-                       title="Our All Options"
-                       description="See our all data to you to navigate"></app-board>
-            <div class="mt-2 d-grid gap-1">
-              <ng-container *ngFor="let buttonNavigation of buttonsToNavigate; let odd = odd">
-                <app-default-button-link [buttonClass]="odd ? 'btn-success' : 'btn-secondary'"
-                                         [buttonConfiguration]="buttonNavigation">
-                </app-default-button-link>
-              </ng-container>
-            </div>
-          </ng-container>
-          <ng-template #feedbackApiStatus>
-            <ng-container *ngIf="(userDataApiError$ | async); else loadingData">
-              <app-board iconName="images/ic-dark-mode.png"
-                         title="Não conseguimos obter os dados :("
-                         description="Não conseguimos obter os dados tente novamente mais tarde!"></app-board>
-            </ng-container>
-            <ng-template #loadingData>
-              <app-board iconName="svg/spinner.svg"
-                         title="Obtendo todos os dados!"
-                         description="Aguarde enquanto buscamos todos os dados!"></app-board>
-            </ng-template>
-          </ng-template>
-        </app-card-panel>
-      </div>-->
-      <div class="order-2 order-lg-1 col-lg-6">
-        <div class="text-white text-lg-start">
-          <h1 class="mt-3 mt-lg-0 display-2">
-            Angular CRUD
-          </h1>
-          <p class="mb-lg-3">
-            A simple Angular CRUD with State Management. Our options data!
-          </p>
-        </div>
-        <div class="mt-2 d-grid gap-1 col-lg-6">
-          <ng-container *ngFor="let buttonNavigation of buttonsToNavigate; let odd = odd">
-            <app-default-button-link [buttonClass]="odd ? 'btn-success' : 'btn-secondary'"
-                                     [buttonConfiguration]="buttonNavigation">
-            </app-default-button-link>
-          </ng-container>
-        </div>
+  <app-structure-container additionalRowClass="align-items-lg-center justify-content-center justify-content-lg-between">
+    <div class="order-2 order-lg-1 col-lg-6">
+      <div class="text-white text-lg-start">
+        <h1 class="mt-3 mt-lg-0 display-2">
+          Angular CRUD
+        </h1>
+        <p class="mb-lg-3">
+          A simple Angular CRUD with State Management. Our options data!
+        </p>
       </div>
-      <div class="order-1 order-lg-2 col-10 col-lg-4">
-        <app-icon pathImage="assets/svg/ic-avatar-two.svg"
-                  imageClass="img-cover">
-        </app-icon>
+      <div class="mt-2 d-grid gap-1 col-lg-6">
+        <ng-container *ngFor="let buttonNavigation of buttonsToNavigate; let odd = odd">
+          <app-default-button-link [buttonClass]="odd ? 'btn-success' : 'btn-secondary'"
+                                   [buttonConfiguration]="buttonNavigation">
+          </app-default-button-link>
+        </ng-container>
       </div>
-    </app-structure-container>
-  </section>
+    </div>
+    <div class="order-1 order-lg-2 col-10 col-lg-4">
+      <app-icon pathImage="assets/svg/ic-avatar-two.svg"
+                imageClass="img-cover">
+      </app-icon>
+    </div>
+  </app-structure-container>
 </app-panel-content>
 <router-outlet></router-outlet>
