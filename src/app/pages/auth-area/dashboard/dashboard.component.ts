@@ -19,12 +19,12 @@ export class DashboardComponent implements OnInit {
   buttonsToNavigate: ButtonLink[] = [
     {
       linkButton: 'dashboard/market-list',
-      buttonDescription: 'movies',
+      buttonDescription: 'market list',
       isRouterLink: true
     },
     {
       linkButton: 'courses',
-      buttonDescription: 'Courses',
+      buttonDescription: 'About',
       isRouterLink: false
     }
   ]
