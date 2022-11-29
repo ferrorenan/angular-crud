@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, take } from 'rxjs';
+import { delay, Observable, take } from 'rxjs';
 import { Card } from '../../../models/card';
 import { MoviesService } from '../../../services/movies.service';
 import { animateListItems } from '../../../animations/animations';
@@ -28,7 +28,7 @@ export class MarketListComponent implements OnInit {
 
     this.movies$ = this._moviesService.getMovies()
         .pipe(
-            take(3),
+            delay(7000),
         );
   }
 

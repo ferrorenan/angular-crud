@@ -8,18 +8,21 @@
   </div>
   <app-structure-container>
     <div class="col-lg-8">
-      <ng-container *ngIf="(movies$ | async) as movies; else statusApiTemplate">
-        <div [@listAnimation]="movies.length">
-          <ng-container *ngFor="let movie of movies">
+      <ng-container *ngIf="(movies$ | async) as marketList; else statusApiTemplate">
+        <div [@listAnimation]="marketList.length">
+          <ng-container *ngFor="let movie of marketList">
             <div class="mb-1">
-              <app-card [card]="movie" (editEvent)="editMovies($event)"></app-card>
+              <app-card [card]="movie"
+                        (editEvent)="editMovies($event)"></app-card>
             </div>
           </ng-container>
         </div>
       </ng-container>
     </div>
     <ng-template #statusApiTemplate>
-      <app-loading-data></app-loading-data>
+      <!--<app-loading-data></app-loading-data>-->
+      <ngx-skeleton-loader [theme]="{width: '100%', height: '95px', marginBottom: '14px', borderRadius: '1.5rem'}"
+                           [count]="7"></ngx-skeleton-loader>
     </ng-template>
   </app-structure-container>
   <app-fab rounterLink="novo"></app-fab>

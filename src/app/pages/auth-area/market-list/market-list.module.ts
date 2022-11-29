@@ -20,6 +20,7 @@ import { FabModule } from '../../../components/fab/fab.module';
 import {
   LoadingDataModule
 } from '../../../components/loading-data/loading-data.module';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {
     CardPanelModule,
     FabModule,
     LoadingDataModule,
-  ]
+    NgxSkeletonLoaderModule,
+  ],
 })
 export class MarketListModule { }
