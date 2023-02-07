@@ -10,14 +10,14 @@ export class HeaderComponent implements OnInit {
 
   headerLinks: Link[] = [
     {
-      link: 'login',
+      link: '',
       title: 'Home',
     },
     {
-      link: 'dashboard',
-      title: 'Dashboard',
-    }
-  ]
+      link: 'about',
+      title: 'About',
+    },
+  ];
 
   constructor() { }
 
