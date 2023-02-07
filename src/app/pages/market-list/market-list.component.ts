@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { delay, Observable, take } from 'rxjs';
-import { Card } from '../../../models/card';
-import { MoviesService } from '../../../services/movies.service';
-import { animateListItems } from '../../../animations/animations';
+import { animateListItems } from '../../animations/animations';
+import { Card } from '../../models/card';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-market-list',

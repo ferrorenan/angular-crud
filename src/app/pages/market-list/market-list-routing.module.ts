@@ -8,11 +8,11 @@ const routes: Routes = [
     component: MarketListComponent,
     title: 'Lista de compra'
   },
-  {
+  /*{
     path: 'novo',
     loadChildren: () => import('../movies-form/movies-form.module')
         .then(module => module.MoviesFormModule)
-  }
+  }*/
 ];
 
 @NgModule({
