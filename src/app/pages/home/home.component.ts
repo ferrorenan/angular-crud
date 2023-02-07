@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ButtonLink
-} from '../../components/default-button-link/models/button-link';
 import { Link } from '../../models/link';
 
 @Component({
