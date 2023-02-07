@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Typography } from '../../models/typography';
-import { catchError, delay, Observable, Subject } from 'rxjs';
-import { User } from '../../models/user';
-import { UserDataService } from '../../services/user-data.service';
-import { Icon } from '../../models/icon';
+import {
+  ButtonLink
+} from '../../components/default-button-link/models/button-link';
+import { Link } from '../../models/link';
 
 @Component({
   selector: 'app-home',
@@ -12,30 +11,16 @@ import { Icon } from '../../models/icon';
 })
 export class HomeComponent implements OnInit {
 
-  userData$?: Observable<User>;
-
-  toDoList: Icon[] = [
+  buttonsToNavigate: Link[] = [
     {
-      name: 'angular',
-      title: 'Angular'
+      link: 'market-list',
+      title: 'market list',
     },
     {
-      name: 'typescript',
-      title: 'Typescript'
-    },
-    {
-      name: 'sass',
-      title: 'Sass'
-    },
-    {
-      name: 'rxjs',
-      title: 'RxJs'
-    },
-    {
-      name: 'ngrx',
-      title: 'NgRx'
-    },
-  ]
+      link: 'about',
+      title: 'about',
+    }
+  ];
 
   constructor() { }
 
