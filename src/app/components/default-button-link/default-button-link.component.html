@@ -1,9 +1,0 @@
-<a [attr.href]="buttonConfiguration?.isRouterLink ? null : buttonConfiguration?.linkButton"
-   routerLink="/dashboard/market-list"
-   [attr.routerLink]="buttonConfiguration?.isRouterLink ? ['/'+buttonConfiguration?.linkButton] : null"
-   [attr.target]="buttonConfiguration?.isRouterLink ? null : '_blank'"
-   [attr.rel]="buttonConfiguration?.isRouterLink ? null : 'noopener'"
-   [title]="buttonConfiguration?.buttonDescription"
-   class="btn d-block {{ buttonClass }}">
-  {{ buttonConfiguration?.buttonDescription | titlecase }}
-</a>
