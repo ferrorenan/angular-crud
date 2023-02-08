@@ -1,5 +1,5 @@
 export interface Card {
-  avatar: string;
+  id: string;
   name: string;
   quantity: number;
 }
