@@ -21,6 +21,10 @@
       <div class="ms-auto col-auto">
         <a role="button"
            (click)="clickEditButton(card.name)"
+           type="button"
+           data-bs-toggle="offcanvas"
+           data-bs-target="#offcanvasWithBackdrop"
+           aria-controls="offcanvasWithBackdrop"
            class="d-block">
           <img src="assets/svg/ic-edit.svg"
                title="Edit"
@@ -32,8 +36,12 @@
         </a>
       </div>
       <div class="col-auto">
-        <a role="button"
-           class="d-inline-block">
+        <a type="button"
+           data-bs-toggle="offcanvas"
+           data-bs-target="#offcanvasWithBackdrop"
+           aria-controls="offcanvasWithBackdrop"
+           class="d-inline-block"
+           (click)="clickDeleteButton(card.name)">
           <img src="assets/svg/ic-remove.svg"
                title="Edit"
                alt="Edit"
