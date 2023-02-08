@@ -1,4 +1,5 @@
-<div class="card">
+<div [id]="'product'+card.id"
+    class="mb-1 card card-product">
   <div class="card-body">
     <div class="row align-items-center">
       <div class="col-lg-6">
@@ -41,7 +42,7 @@
            data-bs-target="#offcanvasWithBackdrop"
            aria-controls="offcanvasWithBackdrop"
            class="d-inline-block"
-           (click)="clickDeleteButton(card.name)">
+           (click)="emmitProductValue(card)">
           <img src="assets/svg/ic-remove.svg"
                title="Edit"
                alt="Edit"

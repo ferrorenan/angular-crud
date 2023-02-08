@@ -8,14 +8,16 @@ import { Card } from '../../models/card';
 })
 export class CardComponent implements OnInit {
 
-  @Input() card!: Card;
+  @Input() card: Card;
+  @Input() productDeleted = '';
 
   @Output() editEvent = new EventEmitter<string>();
-  @Output() deleteButton = new EventEmitter<string>();
+  @Output() buttonAction = new EventEmitter<Card>();
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   clickEditButton(idMovie?: string): void {
@@ -23,8 +25,8 @@ export class CardComponent implements OnInit {
     this.editEvent.emit(idMovie);
   }
 
-  clickDeleteButton(idProduct: string): void {
+  emmitProductValue(productData: Card): void {
 
-    this.deleteButton.emit(idProduct);
+    this.buttonAction.emit(productData);
   }
 }
