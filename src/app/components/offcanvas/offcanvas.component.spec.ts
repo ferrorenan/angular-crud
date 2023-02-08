@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthAreaComponent } from './auth-area.component';
+import { OffcanvasComponent } from './offcanvas.component';
 
-describe('AuthAreaComponent', () => {
-  let component: AuthAreaComponent;
-  let fixture: ComponentFixture<AuthAreaComponent>;
+describe('OffcanvasComponent', () => {
+  let component: OffcanvasComponent;
+  let fixture: ComponentFixture<OffcanvasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuthAreaComponent ]
+      declarations: [ OffcanvasComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AuthAreaComponent);
+    fixture = TestBed.createComponent(OffcanvasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

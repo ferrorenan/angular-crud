@@ -13,7 +13,8 @@
           <ng-container *ngFor="let movie of marketList">
             <div class="mb-1">
               <app-card [card]="movie"
-                        (editEvent)="editMovies($event)"></app-card>
+                        (editEvent)="editMovies($event); typeOfActionManagerMarketList = 'edit'"
+                        (deleteButton)="typeOfActionManagerMarketList = 'delete'"></app-card>
             </div>
           </ng-container>
         </div>
@@ -25,5 +26,8 @@
                            [count]="7"></ngx-skeleton-loader>
     </ng-template>
   </app-structure-container>
-  <app-fab rounterLink="novo"></app-fab>
+  <app-fab (fabClick)="typeOfActionManagerMarketList = 'insert'"></app-fab>
+
 </app-panel-content>
+
+<app-offcanvas [managerType]="typeOfActionManagerMarketList"></app-offcanvas>

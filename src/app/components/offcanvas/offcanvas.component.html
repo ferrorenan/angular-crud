@@ -1,0 +1,52 @@
+<div class="offcanvas offcanvas-end"
+     tabindex="-1"
+     id="offcanvasWithBackdrop"
+     aria-labelledby="offcanvasWithBackdropLabel">
+  <div class="pb-0 offcanvas-header">
+    <button type="button"
+            class="ms-auto btn btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close">
+      <app-icon pathImage="assets/svg/ic-close.svg"
+                [width]="20"
+                [height]="20"></app-icon>
+    </button>
+  </div>
+  <div class="pt-0 offcanvas-body">
+    <ng-container *ngIf="managerType != 'delete'; else deleteIcon">
+      <app-icon [pathImage]="managerType === 'insert' ? 'assets/svg/ic-custom-shape-insert.svg' : 'assets/svg/ic-custom-shape-one.svg'"
+                [width]="250"
+                [height]="250"></app-icon>
+      <h2 class="mb-1">
+        {{ managerType === 'insert'
+          ? 'New product'
+          : 'Edit yout product'
+        }}
+      </h2>
+      <p class="mb-3">
+        {{ managerType === 'insert'
+          ? 'Pleae, insert your new product in your Market List!'
+          : 'Pleae, update your product in your Market List!'
+        }}
+      </p>
+      <app-form  (formValueOutput)="this.getFormValue($event); validateToInsert()"
+                 [typeOfManager]="this.managerType"></app-form>
+    </ng-container>
+    <ng-template #deleteIcon>
+      <app-icon pathImage="assets/svg/ic-shape-delete.svg"
+                [width]="250"
+                [height]="250"></app-icon>
+      <h2 class="mb-1">
+        OoOuuHh
+      </h2>
+      <p class="mb-3">
+        Do you really want to delete this product?!
+      </p>
+      <div class="d-grid col-12">
+        <button class="btn btn-danger text-white">
+          Yeah, delete it!
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</div>

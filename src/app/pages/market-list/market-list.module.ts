@@ -19,6 +19,7 @@ import { FabModule } from '../../components/fab/fab.module';
 import {
   LoadingDataModule
 } from '../../components/loading-data/loading-data.module';
+import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {
     FabModule,
     LoadingDataModule,
     NgxSkeletonLoaderModule,
+    OffcanvasModule,
   ],
 })
 export class MarketListModule { }

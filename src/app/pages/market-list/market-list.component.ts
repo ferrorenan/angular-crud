@@ -16,6 +16,8 @@ export class MarketListComponent implements OnInit {
 
   movies$: Observable<Card[]> | undefined;
 
+  typeOfActionManagerMarketList: 'insert' | 'edit' | 'delete';
+
   constructor(
       private _moviesService: MoviesService
   ) { }
@@ -28,12 +30,13 @@ export class MarketListComponent implements OnInit {
 
     this.movies$ = this._moviesService.getMovies()
         .pipe(
-            delay(7000),
+            delay(2000),
         );
   }
 
   editMovies(movieId: string): void {
 
+    console.log(this.typeOfActionManagerMarketList);
     console.log(movieId);
   }
 }
