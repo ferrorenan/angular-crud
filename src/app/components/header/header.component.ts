@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit {
       link: 'about',
       title: 'About',
     },
+    {
+      link: 'market-list',
+      title: 'Market List',
+    },
   ];
 
   constructor() { }
