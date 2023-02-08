@@ -1,7 +1,7 @@
 <form class="text-start"
       [formGroup]="this.formulary">
-  <div class="form-row">
-    <div class="col">
+  <div class="row">
+    <div class="col-lg-6">
       <div class="mb-1">
         <app-form-input-text formControlName="name"
                              inputName="name"
@@ -10,7 +10,7 @@
                              [control]="getField('name')"></app-form-input-text>
       </div>
     </div>
-    <div class="col">
+    <div class="col-lg-6">
       <div class="mb-2">
         <app-form-input-text formControlName="quantity"
                              inputName="quantity"
@@ -21,7 +21,8 @@
     </div>
   </div>
   <div class="d-grid">
-    <button class="btn btn-secondary"
+    <button class="btn"
+            [ngClass]="typeOfManager === 'insert' ? 'bg-success' : 'bg-warning text-primary'"
             (click)="validateFormulary()">
       Enviar
     </button>
