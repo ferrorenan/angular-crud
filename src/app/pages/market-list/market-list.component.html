@@ -11,17 +11,16 @@
       <ng-container *ngIf="(movies$ | async) as marketList; else statusApiTemplate">
         <div [@listAnimation]="marketList.length">
           <ng-container *ngFor="let movie of marketList">
-            <div class="mb-1">
+            <div>
               <app-card [card]="movie"
                         (editEvent)="editMovies($event); typeOfActionManagerMarketList = 'edit'"
-                        (deleteButton)="typeOfActionManagerMarketList = 'delete'"></app-card>
+                        (buttonAction)="getProductId($event); typeOfActionManagerMarketList = 'delete'"></app-card>
             </div>
           </ng-container>
         </div>
       </ng-container>
     </div>
     <ng-template #statusApiTemplate>
-      <!--<app-loading-data></app-loading-data>-->
       <ngx-skeleton-loader [theme]="{width: '100%', height: '95px', marginBottom: '14px', borderRadius: '1.5rem'}"
                            [count]="7"></ngx-skeleton-loader>
     </ng-template>
@@ -30,4 +29,5 @@
 
 </app-panel-content>
 
-<app-offcanvas [managerType]="typeOfActionManagerMarketList"></app-offcanvas>
+<app-offcanvas [productData]="this.idProduct"
+               [managerType]="typeOfActionManagerMarketList"></app-offcanvas>
