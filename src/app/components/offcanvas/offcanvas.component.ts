@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { AlertService } from '../../services/alert.service';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Card } from '../../models/card';
 
 @Component({
   selector: 'app-offcanvas',
@@ -11,10 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class OffcanvasComponent implements OnInit {
 
-  formData = '';
   passWord = 'renanferro';
 
   @Input() managerType: 'insert' | 'edit' | 'delete';
+  @Input() productData: Card;
 
   constructor(
       private _moviesService: MoviesService,
@@ -22,20 +23,12 @@ export class OffcanvasComponent implements OnInit {
       private _route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-
-  getFormValue(formValue: any): void {
-
-    this.formData = formValue
-    console.log(this.formData);
-  }
-
-  validateToInsert(): void {
+  submitFormValue(): void {
 
     Swal.fire({
-      title: 'Insert the password to add',
+      title: 'Insert the password to Remove',
       input: 'password',
       inputAttributes: {
         autocapitalize: 'off'
@@ -47,45 +40,44 @@ export class OffcanvasComponent implements OnInit {
         if (login != this.passWord) {
 
           this._alertService
-              .alertWithConfirmation(
-                  'Ooopss!',
-                  'Something is wrong!',
-                  'error',
-              );
+              .showErrorFeedbackClient();
+
         } else {
 
-          this.insertNewMovie();
+          this.insertNewProductToMarketList();
         }
       },
       allowOutsideClick: () => !Swal.isLoading()
     })
   }
 
-  insertNewMovie(): void {
+  insertNewProductToMarketList(): void {
 
-    this._alertService
-        .alertWithConfirmation(
-            'Nice!',
-            'Please wait, we are adding the new item!',
-            'info',
-        );
-
-    this._moviesService.insertMovies(this.formData)
+    this._moviesService.removeItemFromList(this.productData.id)
         .subscribe({
-          next: ((response) => {
-            console.log(response);
-          }),
           error: ((error) => {
-            console.log(error);
+            this._alertService
+                .showErrorFeedbackClient();
           }),
           complete: (() => {
             this._alertService
-                .alertWithConfirmation(
-                    'Item Adicionado!',
-                    'Deseja continuar adicionando items em sua lista de compra!?',
+                .showFeedbackClient(
+                    'Yeah, done!',
+                    `The ${this.productData.name} was deleted from your market list!`,
                     'success',
-                )
+                );
           })
         })
+  }
+
+  closeOffcanvas(): void {
+
+    const cardsProduct = document.querySelectorAll('.card-product');
+
+    cardsProduct.forEach((cardsProduct: Element) => {
+      cardsProduct.id === `product${this.productData.id}`
+          ? cardsProduct.classList.add('card-deleted-animation')
+          : null
+    });
   }
 }

@@ -1,12 +1,14 @@
 <div class="offcanvas offcanvas-end"
      tabindex="-1"
      id="offcanvasWithBackdrop"
+     data-bs-scroll="true"
      aria-labelledby="offcanvasWithBackdropLabel">
   <div class="pb-0 offcanvas-header">
     <button type="button"
             class="ms-auto btn btn-close text-reset"
             data-bs-dismiss="offcanvas"
-            aria-label="Close">
+            aria-label="Close"
+            (click)="closeOffcanvas()">
       <app-icon pathImage="assets/svg/ic-close.svg"
                 [width]="20"
                 [height]="20"></app-icon>
@@ -29,8 +31,7 @@
           : 'Pleae, update your product in your Market List!'
         }}
       </p>
-      <app-form  (formValueOutput)="this.getFormValue($event); validateToInsert()"
-                 [typeOfManager]="this.managerType"></app-form>
+      <app-form [typeOfManager]="this.managerType"></app-form>
     </ng-container>
     <ng-template #deleteIcon>
       <app-icon pathImage="assets/svg/ic-shape-delete.svg"
@@ -40,10 +41,21 @@
         OoOuuHh
       </h2>
       <p class="mb-3">
-        Do you really want to delete this product?!
+        You'll
+        <span class="fw-bold">
+          remove
+        </span>
+        the
+        <span class="fw-bold text-danger">
+          {{ productData.name }}
+        </span>
+        product permanently
+        <br>
+        are you sure about that?!
       </p>
       <div class="d-grid col-12">
-        <button class="btn btn-danger text-white">
+        <button class="btn btn-danger text-white"
+                (click)="submitFormValue()">
           Yeah, delete it!
         </button>
       </div>
