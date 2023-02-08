@@ -9,7 +9,6 @@ import { Card } from '../../models/card';
 export class CardComponent implements OnInit {
 
   @Input() card: Card;
-  @Input() productDeleted = '';
 
   @Output() editEvent = new EventEmitter<string>();
   @Output() buttonAction = new EventEmitter<Card>();
