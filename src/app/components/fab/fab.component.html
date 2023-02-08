@@ -1,8 +1,12 @@
-<a [routerLink]="rounterLink"
-   title="Insert"
-   aria-label="Insert"
-   class="d-block fab">
+<button title="Insert"
+        aria-label="Insert"
+        class="btn d-block fab"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBackdrop"
+        aria-controls="offcanvasWithBackdrop"
+        (click)="clickInsertElement()">
   <app-icon pathImage="assets/svg/ic-plus.svg"
             [width]="50"
             [height]="50"></app-icon>
-</a>
+</button>

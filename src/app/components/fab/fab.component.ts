@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-fab',
@@ -8,10 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FabComponent implements OnInit {
 
   @Input() rounterLink = '';
+  @Input() icon = '';
+
+  @Output() fabClick = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  clickInsertElement(): void {
+
+    this.fabClick.next('');
+  }
 }
