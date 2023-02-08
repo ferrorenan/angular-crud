@@ -10,6 +10,7 @@ import {
   StructureContainerModule
 } from '../../components/structure-container/structure-container.module';
 import { CardPanelModule } from '../../components/card-panel/card-panel.module';
+import { IconModule } from '../../components/icon/icon.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CardPanelModule } from '../../components/card-panel/card-panel.module';
     PanelContentModule,
     StructureContainerModule,
     CardPanelModule,
+    IconModule,
   ],
 })
 export class AboutModule { }

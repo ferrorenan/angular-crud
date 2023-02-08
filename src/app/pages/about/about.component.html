@@ -1,11 +1,11 @@
 <app-panel-content additionalClass="pt-2 pb-4 py-lg-0">
   <app-structure-container additionalRowClass="align-items-lg-center justify-content-center justify-content-lg-around">
-    <div class="col-10 col-lg-4">
-      <img src="assets/svg/ic-avatar-one.svg"
-           title="Welcome"
-           alt="Welcome"
-           class="img-cover word-animation"
-           loading="lazy">
+    <div class="col-10 col-lg-auto">
+      <app-icon class="img-cover word-animation"
+                pathImage="assets/svg/ic-shape-about.svg"
+                [width]="500"
+                [height]="500"
+                title="A simple Angular CRUD"></app-icon>
     </div>
     <div class="mt-2 mt-lg-0 col-lg-6">
       <h1>
@@ -21,22 +21,14 @@
         <ul class="mb-2 mb-lg-3 text-start list-unstyled d-flex justify-content-center">
           <ng-container *ngFor="let listItem of toDoList">
             <li>
-              <img [src]="'assets/svg/logo-'+listItem.name+'.svg'"
-                   [title]="listItem.title"
-                   [alt]="listItem.title"
-                   class="mx-1 img-fluid tecnologie-logo"
-                   loading="lazy"
-                   width="40"
-                   height="40">
+              <app-icon class="mx-1 img-fluid tecnologie-logo"
+                        [pathImage]="'assets/svg/logo-'+listItem.name+'.svg'"
+                        [width]="40"
+                        [height]="40"
+                        [title]="listItem.title"></app-icon>
             </li>
           </ng-container>
         </ul>
-        <div class="d-grid">
-          <a routerLink="/dashboard"
-             class="btn d-block btn-secondary">
-            GO
-          </a>
-        </div>
       </app-card-panel>
     </div>
   </app-structure-container>
