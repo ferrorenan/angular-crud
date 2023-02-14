@@ -31,7 +31,8 @@
           : 'Pleae, update your product in your Market List!'
         }}
       </p>
-      <app-form [typeOfManager]="this.managerType"></app-form>
+      <app-form [typeOfManager]="this.managerType"
+                [productData]="this.productData"></app-form>
     </ng-container>
     <ng-template #deleteIcon>
       <app-icon pathImage="assets/svg/ic-shape-delete.svg"

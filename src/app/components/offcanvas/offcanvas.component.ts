@@ -72,6 +72,10 @@ export class OffcanvasComponent implements OnInit {
 
   closeOffcanvas(): void {
 
+    if (this.managerType != 'delete') {
+      return
+    }
+
     const cardsProduct = document.querySelectorAll('.card-product');
 
     cardsProduct.forEach((cardsProduct: Element) => {
