@@ -16,9 +16,6 @@ import {
 import { CardModule } from '../../components/card/card.module';
 import { CardPanelModule } from '../../components/card-panel/card-panel.module';
 import { FabModule } from '../../components/fab/fab.module';
-import {
-  LoadingDataModule
-} from '../../components/loading-data/loading-data.module';
 import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
 
 
@@ -35,7 +32,6 @@ import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
     CardModule,
     CardPanelModule,
     FabModule,
-    LoadingDataModule,
     NgxSkeletonLoaderModule,
     OffcanvasModule,
   ],

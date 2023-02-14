@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoadingModule } from './components/loading/loading.module';
 import { HeaderModule } from './components/header/header.module';
 import { SetDomainInterceptor } from './interceptors/set-domain.interceptor';
 
@@ -18,7 +17,6 @@ import { SetDomainInterceptor } from './interceptors/set-domain.interceptor';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    LoadingModule,
     HeaderModule,
   ],
   providers: [
