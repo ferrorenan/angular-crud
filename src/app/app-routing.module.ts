@@ -3,17 +3,30 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     loadChildren: () => import('./pages/home/home.module')
         .then(module => module.HomeModule),
-    title: 'Welcome'
+    pathMatch: 'full',
+    data: {
+      state: 'Home'
+    }
   },
   {
-    path: '',
-    loadChildren: () => import('./pages/auth-area/auth-area.module')
-        .then(module => module.AuthAreaModule),
-    title: 'Home'
-  }
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module')
+        .then(module => module.AboutModule),
+    data: {
+      state: 'About'
+    }
+  },
+  {
+    path: 'market-list',
+    loadChildren: () => import('./pages/market-list/market-list.module')
+        .then(module => module.MarketListModule),
+    data: {
+      state: 'MarketList'
+    }
+  },
 ];
 
 @NgModule({
