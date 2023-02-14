@@ -10,8 +10,8 @@ export class CardComponent implements OnInit {
 
   @Input() card: Card;
 
-  @Output() editEvent = new EventEmitter<string>();
   @Output() buttonAction = new EventEmitter<Card>();
+  @Output() editEvent = new EventEmitter<Card>();
 
   constructor() { }
 
@@ -19,9 +19,9 @@ export class CardComponent implements OnInit {
 
   }
 
-  clickEditButton(idMovie?: string): void {
+  clickEditButton(productData: Card): void {
 
-    this.editEvent.emit(idMovie);
+    this.editEvent.emit(productData);
   }
 
   emmitProductValue(productData: Card): void {
