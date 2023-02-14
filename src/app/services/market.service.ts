@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
-import { AbstractionApiService } from './abstraction-api.service';
-import { Card } from '../models/card';
 import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
+import { Card } from '../models/card';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MoviesService {
+export class MarketService {
 
   constructor(
-      private _abstractionApi: AbstractionApiService,
       private _httpClient: HttpClient
   ) { }
 

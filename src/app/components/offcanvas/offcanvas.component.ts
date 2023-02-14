@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MoviesService } from '../../services/movies.service';
 import { AlertService } from '../../services/alert.service';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Card } from '../../models/card';
+import { MarketService } from '../../services/market.service';
 
 @Component({
   selector: 'app-offcanvas',
@@ -18,7 +18,7 @@ export class OffcanvasComponent implements OnInit {
   @Input() productData: Card;
 
   constructor(
-      private _moviesService: MoviesService,
+      private _marketService: MarketService,
       private _alertService: AlertService,
       private _route: ActivatedRoute
   ) {}
@@ -53,7 +53,7 @@ export class OffcanvasComponent implements OnInit {
 
   insertNewProductToMarketList(): void {
 
-    this._moviesService.removeItemFromList(this.productData.id)
+    this._marketService.removeItemFromList(this.productData.id)
         .subscribe({
           error: ((error) => {
             this._alertService

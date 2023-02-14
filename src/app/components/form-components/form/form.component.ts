@@ -3,8 +3,8 @@ import { BaseFormComponent } from '../base-form/base-form.component';
 import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AlertService } from '../../../services/alert.service';
-import { MoviesService } from '../../../services/movies.service';
 import { Card } from '../../../models/card';
+import { MarketService } from '../../../services/market.service';
 
 @Component({
   selector: 'app-form',
@@ -23,7 +23,7 @@ export class FormComponent extends BaseFormComponent implements OnInit {
   constructor(
       private _formBuilder: FormBuilder,
       private _alertService: AlertService,
-      private _moviesService: MoviesService,
+      private _marketService: MarketService,
   ) {
     super();
   }
@@ -141,7 +141,7 @@ export class FormComponent extends BaseFormComponent implements OnInit {
 
   insertNewProductToMarketList(): void {
 
-    this._moviesService.insertMovies(this.formulary.getRawValue())
+    this._marketService.insertMovies(this.formulary.getRawValue())
         .subscribe({
           next: ((response) => {
             console.log(response);
@@ -174,7 +174,7 @@ export class FormComponent extends BaseFormComponent implements OnInit {
       quantity: this.formulary.value.quantity,
     };
 
-    this._moviesService.editProductData(productUpdated)
+    this._marketService.editProductData(productUpdated)
         .subscribe({
           next: ((response) => {
             console.log(response);

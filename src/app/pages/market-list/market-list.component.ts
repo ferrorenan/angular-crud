@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { delay, Observable, take } from 'rxjs';
 import { animateListItems } from '../../animations/animations';
 import { Card } from '../../models/card';
-import { MoviesService } from '../../services/movies.service';
+import { MarketService } from '../../services/market.service';
 
 @Component({
   selector: 'app-market-list',
@@ -20,7 +20,7 @@ export class MarketListComponent implements OnInit {
   productData: Card;
 
   constructor(
-      private _moviesService: MoviesService
+      private _marketService: MarketService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class MarketListComponent implements OnInit {
 
   getMovies(): void {
 
-    this.movies$ = this._moviesService.getMovies()
+    this.movies$ = this._marketService.getMovies()
         .pipe(
             delay(2000),
         );
