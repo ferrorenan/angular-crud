@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AlertService } from '../../../services/alert.service';
 import { MoviesService } from '../../../services/movies.service';
+import { Card } from '../../../models/card';
 
 @Component({
   selector: 'app-form',
@@ -16,7 +17,8 @@ export class FormComponent extends BaseFormComponent implements OnInit {
   formData = '';
 
   @Output() formValueOutput = new EventEmitter<any>();
-  @Input() typeOfManager: string | null = '';
+  @Input() typeOfManager: 'insert' | 'edit' | 'delete';
+  @Input() productData: Card;
 
   constructor(
       private _formBuilder: FormBuilder,
@@ -30,6 +32,18 @@ export class FormComponent extends BaseFormComponent implements OnInit {
 
     this.buildForm();
 
+
+    var myOffcanvas = document.getElementById('offcanvasWithBackdrop')
+    // @ts-ignore
+    myOffcanvas.addEventListener('shown.bs.offcanvas', () => {
+      console.log(`o tipo ${this.productData}`);
+      if (this.typeOfManager === 'edit') {
+        console.log('entrou');
+        console.log(this.productData);
+
+        this.pathFormValuesToEdit();
+      }
+    })
   }
 
   buildForm(): void {
@@ -40,6 +54,14 @@ export class FormComponent extends BaseFormComponent implements OnInit {
     });
   }
 
+  pathFormValuesToEdit(): void {
+
+    this.formulary.patchValue({
+      name: this.productData.name,
+      quantity: this.productData.quantity
+    })
+  }
+
   validateFormulary(): void {
 
     !this.formulary.valid
@@ -47,8 +69,48 @@ export class FormComponent extends BaseFormComponent implements OnInit {
         : this.submitFormValue();
   }
 
-  submitFormValue(): void {
+  private validateFormularyToSubmit(): boolean {
 
+    return !this.formulary.valid
+  }
+
+  verifyFormEditToSubmit(): void {
+
+    this.validateFormularyToSubmit()
+        ? this.verifyFormValidations(this.formulary)
+        : this.submitFormEditProductValues()
+  }
+
+  submitFormEditProductValues(): void {
+
+    Swal.fire({
+      title: 'Insert the password to add',
+      input: 'password',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Validate',
+      showLoaderOnConfirm: true,
+      preConfirm: (login) => {
+        if (login != this.passWord) {
+
+          this._alertService
+              .alertWithConfirmation(
+                  'Ooopss!',
+                  'Something is wrong!',
+                  'error',
+              );
+        } else {
+
+          this.updateProductData();
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    })
+  }
+
+  submitFormValue(): void {
 
     Swal.fire({
       title: 'Insert the password to add',
@@ -79,13 +141,6 @@ export class FormComponent extends BaseFormComponent implements OnInit {
 
   insertNewProductToMarketList(): void {
 
-    this._alertService
-        .alertWithConfirmation(
-            'Nice!',
-            'Please wait, we are adding the new item!',
-            'info',
-        );
-
     this._moviesService.insertMovies(this.formulary.getRawValue())
         .subscribe({
           next: ((response) => {
@@ -105,6 +160,39 @@ export class FormComponent extends BaseFormComponent implements OnInit {
                 .showFeedbackClient(
                     'New item added!',
                     'Your new item was added in your market list!',
+                    'success',
+                );
+          })
+        })
+  }
+
+  updateProductData(): void {
+
+    const productUpdated: Card = {
+      id: this.productData.id,
+      name: this.formulary.value.name,
+      quantity: this.formulary.value.quantity,
+    };
+
+    this._moviesService.editProductData(productUpdated)
+        .subscribe({
+          next: ((response) => {
+            console.log(response);
+          }),
+          error: ((error) => {
+            console.log(error);
+            this._alertService
+                .showFeedbackClient(
+                    'OooOuuhH!',
+                    'Something happened and we had a error!',
+                    'error',
+                );
+          }),
+          complete: (() => {
+            this._alertService
+                .showFeedbackClient(
+                    'Product Updated!',
+                    'Your procut was updated with the new informations!',
                     'success',
                 );
           })

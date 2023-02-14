@@ -21,10 +21,18 @@
     </div>
   </div>
   <div class="d-grid">
-    <button class="btn"
-            [ngClass]="typeOfManager === 'insert' ? 'bg-success' : 'bg-warning text-primary'"
-            (click)="validateFormulary()">
-      Enviar
-    </button>
+    <ng-container *ngIf="this.typeOfManager === 'insert'; else editTemplateButton">
+      <button class="btn"
+              [ngClass]="typeOfManager === 'insert' ? 'bg-success' : 'bg-warning text-primary'"
+              (click)="validateFormulary()">
+        Enviar
+      </button>
+    </ng-container>
+    <ng-template #editTemplateButton>
+      <button class="btn btn-warning text-primary"
+              (click)="verifyFormEditToSubmit()">
+        Edit
+      </button>
+    </ng-template>
   </div>
 </form>
