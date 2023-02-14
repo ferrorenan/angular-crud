@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-auto">
-        <app-button-back [routerLink]="'/dashboard'"></app-button-back>
+        <app-button-back [routerLink]="''"></app-button-back>
       </div>
     </div>
   </div>
@@ -13,7 +13,7 @@
           <ng-container *ngFor="let movie of marketList">
             <div>
               <app-card [card]="movie"
-                        (editEvent)="editMovies($event); typeOfActionManagerMarketList = 'edit'"
+                        (editEvent)="getProductId($event); typeOfActionManagerMarketList = 'edit'"
                         (buttonAction)="getProductId($event); typeOfActionManagerMarketList = 'delete'"></app-card>
             </div>
           </ng-container>
@@ -29,5 +29,5 @@
 
 </app-panel-content>
 
-<app-offcanvas [productData]="this.idProduct"
+<app-offcanvas [productData]="this.productData"
                [managerType]="typeOfActionManagerMarketList"></app-offcanvas>
