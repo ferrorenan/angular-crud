@@ -8,16 +8,34 @@ import { Router } from '@angular/router';
 export class AlertService {
 
   private alert = Swal.mixin({
+    showConfirmButton: false,
     customClass: {
       confirmButton: 'ms-1 px-lg-2 text-white btn btn-success',
       cancelButton: 'text-white btn btn-danger'
     },
-    buttonsStyling: false
+    buttonsStyling: false,
+    timer: 5000,
   });
 
   constructor(
       private _router: Router
   ) { }
+
+  showFeedbackClient(
+      title: string,
+      message: string,
+      typeAlert?: SweetAlertIcon
+  ) {
+    this.alert.fire(title, message, typeAlert);
+  }
+
+  showErrorFeedbackClient() {
+    this.alert.fire(
+        'OooOuuhH!',
+        'Something happened and we had a error!',
+        'error',
+    );
+  }
 
   alertWithConfirmation(
       title: string,
