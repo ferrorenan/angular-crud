@@ -6,13 +6,8 @@ const routes: Routes = [
   {
     path: '',
     component: MarketListComponent,
-    title: 'Lista de compra'
+    title: 'CRUD - Your Market List items!'
   },
-  /*{
-    path: 'novo',
-    loadChildren: () => import('../movies-form/movies-form.module')
-        .then(module => module.MoviesFormModule)
-  }*/
 ];
 
 @NgModule({
