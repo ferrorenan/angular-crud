@@ -5,9 +5,6 @@ import { MarketListRoutingModule } from './market-list-routing.module';
 import { MarketListComponent } from './market-list.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import {
-  PanelContentModule
-} from '../../components/panel-content/panel-content.module';
-import {
   StructureContainerModule
 } from '../../components/structure-container/structure-container.module';
 import {
@@ -25,7 +22,6 @@ import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
   imports: [
     CommonModule,
     MarketListRoutingModule,
-    PanelContentModule,
     StructureContainerModule,
     ButtonBackModule,
     CardModule,
