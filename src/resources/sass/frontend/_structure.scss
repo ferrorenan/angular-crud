@@ -2,13 +2,15 @@
 
   &-y {
 
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
 
-    @include media-breakpoint-up(lg) {
+body {
 
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
+  @include media-breakpoint-up(lg) {
+
+    text-align: left;
   }
 }
