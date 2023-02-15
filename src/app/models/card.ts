@@ -1,5 +1,5 @@
 export interface Card {
   id: string;
-  name: string;
-  quantity: number;
+  name?: string;
+  quantity?: number;
 }
