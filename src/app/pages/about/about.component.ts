@@ -1,43 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { User } from '../../models/user';
-import { Icon } from '../../models/icon';
+import { Component } from '@angular/core';
+import { Card } from '../../models/card';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
-  userData$?: Observable<User>;
+  projectTecnologies: Card[] = [
+    {
+      id: 'angular',
+    },
+    {
+      id: 'typescript',
+    },
+    {
+      id: 'bootstrap',
+    },
+    {
+      id: 'git',
+    },
+    {
+      id: 'sass',
+    },
+    {
+      id: 'rxjs',
+    },
+    {
+      id: 'ngrx',
+    },
+    {
+      id: 'github',
+    },
+  ];
 
-  toDoList: Icon[] = [
+  publishData: Card[] = [
     {
-      name: 'angular',
-      title: 'Angular'
-    },
-    {
-      name: 'typescript',
-      title: 'Typescript'
-    },
-    {
-      name: 'sass',
-      title: 'Sass'
-    },
-    {
-      name: 'rxjs',
-      title: 'RxJs'
-    },
-    {
-      name: 'ngrx',
-      title: 'NgRx'
+      id: 'vercel',
     },
   ];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

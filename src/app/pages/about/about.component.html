@@ -1,35 +1,52 @@
-<app-panel-content additionalClass="pt-2 pb-4 py-lg-0">
+<app-panel-content additionalClass="pt-2 pb-4 py-lg-0 text-start">
   <app-structure-container additionalRowClass="align-items-lg-center justify-content-center justify-content-lg-around">
-    <div class="col-10 col-lg-auto">
+    <div class="col-10 col-lg-6">
       <app-icon class="img-cover word-animation"
                 pathImage="assets/svg/ic-shape-about.svg"
-                [width]="500"
-                [height]="500"
+                [width]="600"
+                [height]="600"
                 title="A simple Angular CRUD"></app-icon>
     </div>
     <div class="mt-2 mt-lg-0 col-lg-6">
-      <h1>
+      <h2>
         A simple Angular CRUD
-      </h1>
+      </h2>
       <p class="mb-3">
-        A simple Angular CRUD project with some and cools tecnologies!
+        A simple Angular CRUD Project, made to pratice angular development,
+        state management and be a better developer!
       </p>
-      <app-card-panel>
-        <h2 class="display-7">
-          Tecnologies
-        </h2>
-        <ul class="mb-2 mb-lg-3 text-start list-unstyled d-flex justify-content-center">
-          <ng-container *ngFor="let listItem of toDoList">
-            <li>
-              <app-icon class="mx-1 img-fluid tecnologie-logo"
-                        [pathImage]="'assets/svg/logo-'+listItem.name+'.svg'"
-                        [width]="40"
-                        [height]="40"
-                        [title]="listItem.title"></app-icon>
-            </li>
-          </ng-container>
-        </ul>
-      </app-card-panel>
+      <h3 class="mb-1 display-7">
+        Tecnologies
+      </h3>
+      <div class="mb-2">
+        <ng-container *ngFor="let tecnologie of projectTecnologies">
+          <div class="me-1 mb-1 ps-1 pe-2 badge bg-secondary">
+            <app-icon class="d-inline-block img-fluid"
+                      pathImage="assets/svg/ic-check.svg"
+                      [width]="30"
+                      [height]="30"
+                      [title]="tecnologie.id | titlecase"></app-icon>
+            <h4 class="mb-0 d-inline-block">
+              {{ tecnologie.id | titlecase }}
+            </h4>
+          </div>
+        </ng-container>
+      </div>
+      <h3 class="mb-1 display-7">
+        Publish
+      </h3>
+      <ng-container *ngFor="let tecnologie of publishData">
+        <div class="me-1 mb-1 ps-1 pe-2 badge bg-secondary">
+          <app-icon class="d-inline-block img-fluid"
+                    pathImage="assets/svg/ic-check.svg"
+                    [width]="30"
+                    [height]="30"
+                    [title]="tecnologie.id | titlecase"></app-icon>
+          <h4 class="mb-0 d-inline-block">
+            {{ tecnologie.id | titlecase }}
+          </h4>
+        </div>
+      </ng-container>
     </div>
   </app-structure-container>
 </app-panel-content>
