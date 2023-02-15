@@ -9,7 +9,6 @@ import {
 import {
   StructureContainerModule
 } from '../../components/structure-container/structure-container.module';
-import { CardPanelModule } from '../../components/card-panel/card-panel.module';
 import { IconModule } from '../../components/icon/icon.module';
 import { LinkModule } from '../../components/link/link.module';
 
@@ -23,7 +22,6 @@ import { LinkModule } from '../../components/link/link.module';
     HomeRoutingModule,
     PanelContentModule,
     StructureContainerModule,
-    CardPanelModule,
     IconModule,
     LinkModule,
   ],

@@ -14,7 +14,6 @@ import {
   ButtonBackModule
 } from '../../components/button-back/button-back.module';
 import { CardModule } from '../../components/card/card.module';
-import { CardPanelModule } from '../../components/card-panel/card-panel.module';
 import { FabModule } from '../../components/fab/fab.module';
 import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
 
@@ -30,7 +29,6 @@ import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
     StructureContainerModule,
     ButtonBackModule,
     CardModule,
-    CardPanelModule,
     FabModule,
     NgxSkeletonLoaderModule,
     OffcanvasModule,

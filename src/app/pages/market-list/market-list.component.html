@@ -1,11 +1,4 @@
-<app-panel-content additionalClass="pt-3 pt-lg-6">
-  <div class="container">
-    <div class="row">
-      <div class="col-auto">
-        <app-button-back [routerLink]="''"></app-button-back>
-      </div>
-    </div>
-  </div>
+<main class="pt-5 pt-lg-3">
   <app-structure-container>
     <div class="col-lg-8">
       <ng-container *ngIf="(movies$ | async) as marketList; else statusApiTemplate">
@@ -27,7 +20,6 @@
   </app-structure-container>
   <app-fab (fabClick)="typeOfActionManagerMarketList = 'insert'"></app-fab>
 
-</app-panel-content>
-
-<app-offcanvas [productData]="this.productData"
-               [managerType]="typeOfActionManagerMarketList"></app-offcanvas>
+  <app-offcanvas [productData]="this.productData"
+                 [managerType]="typeOfActionManagerMarketList"></app-offcanvas>
+</main>
