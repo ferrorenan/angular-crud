@@ -5,6 +5,7 @@ import { LinkModule } from '../link/link.module';
 import {
   ToggleThemeSiteModule
 } from '../toggle-theme-site/toggle-theme-site.module';
+import { IconModule } from '../icon/icon.module';
 
 
 
@@ -16,6 +17,7 @@ import {
     CommonModule,
     LinkModule,
     ToggleThemeSiteModule,
+    IconModule,
   ],
   exports: [
     HeaderComponent
