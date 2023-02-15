@@ -24,7 +24,7 @@
             <div class="navbar-nav">
               <ng-container *ngFor="let link of headerLinks">
                 <app-link [linkProperties]="link"
-
+                          [title]="link.title"
                           classLink="me-lg-1 nav-link"></app-link>
               </ng-container>
             </div>
