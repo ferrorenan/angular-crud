@@ -7,9 +7,6 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import {
   StructureContainerModule
 } from '../../components/structure-container/structure-container.module';
-import {
-  ButtonBackModule
-} from '../../components/button-back/button-back.module';
 import { CardModule } from '../../components/card/card.module';
 import { FabModule } from '../../components/fab/fab.module';
 import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
@@ -23,7 +20,6 @@ import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
     CommonModule,
     MarketListRoutingModule,
     StructureContainerModule,
-    ButtonBackModule,
     CardModule,
     FabModule,
     NgxSkeletonLoaderModule,
