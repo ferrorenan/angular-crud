@@ -15,17 +15,22 @@
                     [width]="30"
                     [height]="30"></app-icon>
         </button>
-        <div class="collapse navbar-collapse"
-             id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <ng-container *ngFor="let link of headerLinks">
-              <app-link [linkProperties]="link"
+        <div class="col-auto order-lg-2">
+          <app-toggle-theme-site></app-toggle-theme-site>
+        </div>
+        <div class="col-12 col-lg-auto order-lg-1">
+          <div class="collapse navbar-collapse"
+               id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <ng-container *ngFor="let link of headerLinks">
+                <app-link [linkProperties]="link"
 
-                        classLink="me-lg-1 nav-link"></app-link>
-            </ng-container>
+                          classLink="me-lg-1 nav-link"></app-link>
+              </ng-container>
+            </div>
           </div>
         </div>
-        <app-toggle-theme-site></app-toggle-theme-site>
+
       </div>
     </nav>
   </div>
