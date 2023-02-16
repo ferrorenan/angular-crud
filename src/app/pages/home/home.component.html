@@ -1,4 +1,4 @@
-<main>
+<app-panel-content>
   <app-structure-container additionalRowClass="align-items-lg-center justify-content-center justify-content-lg-between">
     <div class="order-2 order-lg-1 col-lg-6">
       <div class="text-white text-lg-start">
@@ -12,7 +12,7 @@
       <div class="mt-2 d-grid gap-1 col-lg-6">
         <ng-container *ngFor="let buttonNavigation of buttonsToNavigate; let odd = odd">
           <app-link [linkProperties]="buttonNavigation"
-              [classLink]="odd ? 'btn d-block btn-success' : 'btn d-block btn-secondary'"></app-link>
+                    [classLink]="odd ? 'btn d-block btn-success' : 'btn d-block btn-secondary'"></app-link>
         </ng-container>
       </div>
     </div>
@@ -24,4 +24,4 @@
                 title="A simple Angular CRUD"></app-icon>
     </div>
   </app-structure-container>
-</main>
+</app-panel-content>

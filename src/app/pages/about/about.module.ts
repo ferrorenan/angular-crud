@@ -7,6 +7,9 @@ import {
   StructureContainerModule
 } from '../../components/structure-container/structure-container.module';
 import { IconModule } from '../../components/icon/icon.module';
+import {
+  PanelContentModule
+} from '../../components/panel-content/panel-content.module';
 
 
 @NgModule({
@@ -18,6 +21,7 @@ import { IconModule } from '../../components/icon/icon.module';
     AboutRoutingModule,
     StructureContainerModule,
     IconModule,
+    PanelContentModule,
   ],
 })
 export class AboutModule { }
