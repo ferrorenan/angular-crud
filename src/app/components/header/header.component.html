@@ -16,7 +16,15 @@
                     [height]="30"></app-icon>
         </button>
         <div class="col-auto order-lg-2">
-          <app-toggle-theme-site></app-toggle-theme-site>
+          <app-icon pathImage="assets/svg/ic-boxes.svg"
+                    [width]="25"
+                    [height]="25">
+          </app-icon>
+          <ng-container *ngIf="(marketList$ | async) as marketList">
+            <span class="text-success fw-bold">
+              {{ marketList.length }}
+            </span>
+          </ng-container>
         </div>
         <div class="col-12 col-lg-auto order-lg-1">
           <div class="collapse navbar-collapse"

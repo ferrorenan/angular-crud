@@ -8,6 +8,9 @@ import {
 } from '../../components/structure-container/structure-container.module';
 import { IconModule } from '../../components/icon/icon.module';
 import { LinkModule } from '../../components/link/link.module';
+import {
+  PanelContentModule
+} from '../../components/panel-content/panel-content.module';
 
 
 @NgModule({
@@ -20,6 +23,7 @@ import { LinkModule } from '../../components/link/link.module';
     StructureContainerModule,
     IconModule,
     LinkModule,
+    PanelContentModule,
   ],
 })
 export class HomeModule { }

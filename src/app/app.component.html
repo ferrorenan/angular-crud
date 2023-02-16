@@ -1,6 +1,4 @@
 <app-header></app-header>
-<div class="block-spacer-y overflow-hidden">
-  <div [@routerAnimations]="getState(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
-  </div>
+<div [@routerAnimations]="getState(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>

@@ -3,7 +3,7 @@
 A simple Angular CRUD Project, made to pratice angular development, state management
 and be a better developer!
 
-Vercel publish: angular-crud-renanferro.vercel.app
+Vercel publish: https://angular-crud-renanferro.vercel.app/
 
 ### Made with
 ![](https://img.shields.io/badge/Code-Angular-informational?style=flat&logo=angular&logoColor=fc0000&color=fc0000)

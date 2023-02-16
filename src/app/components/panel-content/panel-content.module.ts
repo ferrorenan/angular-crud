@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BoardComponent } from './board.component';
+import { PanelContentComponent } from './panel-content.component';
 
 
 
 @NgModule({
   declarations: [
-      BoardComponent
+      PanelContentComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    BoardComponent
+    PanelContentComponent
   ]
 })
-export class BoardModule { }
+export class PanelContentModule { }
