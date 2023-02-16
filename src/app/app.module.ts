@@ -7,6 +7,10 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './components/header/header.module';
 import { SetDomainInterceptor } from './interceptors/set-domain.interceptor';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from '../environments/environment';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { MarketListStates } from './store/state/market-list.state';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,18 @@ import { SetDomainInterceptor } from './interceptors/set-domain.interceptor';
     HttpClientModule,
     BrowserAnimationsModule,
     HeaderModule,
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      name: 'MarketList',
+      disabled: environment.production,
+    }),
+    NgxsModule.forRoot([
+      MarketListStates
+    ], {
+      selectorOptions: {
+        suppressErrors: false,
+        injectContainerState: false
+      }
+    }),
   ],
   providers: [
     {

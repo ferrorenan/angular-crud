@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {
   fader,
 } from './animations/route-animations';
+import { Store } from '@ngxs/store';
+import { MarketListActions } from './store/actions/market-list.actions';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +15,13 @@ export class AppComponent implements OnInit{
   title = 'angular-crud';
 
   constructor(
+      private _store: Store
   ) {}
 
   ngOnInit(): void {
 
-    this.insertConsoleStylezation()
+    this.insertConsoleStylezation();
+    this._store.dispatch(new MarketListActions.GetMarketList())
   }
 
   getState(outlet: any) {
