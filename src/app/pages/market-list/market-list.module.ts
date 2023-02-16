@@ -10,6 +10,9 @@ import {
 import { CardModule } from '../../components/card/card.module';
 import { FabModule } from '../../components/fab/fab.module';
 import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
+import {
+  PanelContentModule
+} from '../../components/panel-content/panel-content.module';
 
 
 @NgModule({
@@ -24,6 +27,7 @@ import { OffcanvasModule } from '../../components/offcanvas/offcanvas.module';
     FabModule,
     NgxSkeletonLoaderModule,
     OffcanvasModule,
+    PanelContentModule,
   ],
 })
 export class MarketListModule { }

@@ -1,4 +1,4 @@
-<main class="pt-5 pt-lg-3">
+<app-panel-content class="pt-6">
   <app-structure-container>
     <div class="col-lg-8">
       <ng-container *ngIf="(movies$ | async) as marketList; else statusApiTemplate">
@@ -22,4 +22,4 @@
 
   <app-offcanvas [productData]="this.productData"
                  [managerType]="typeOfActionManagerMarketList"></app-offcanvas>
-</main>
+</app-panel-content>
