@@ -3,6 +3,8 @@ import { delay, Observable, take } from 'rxjs';
 import { animateListItems } from '../../animations/animations';
 import { Card } from '../../models/card';
 import { MarketService } from '../../services/market.service';
+import { Select } from '@ngxs/store';
+import { MarketListStates } from '../../store/state/market-list.state';
 
 @Component({
   selector: 'app-market-list',
@@ -12,33 +14,17 @@ import { MarketService } from '../../services/market.service';
     animateListItems
   ]
 })
-export class MarketListComponent implements OnInit {
-
-  movies$: Observable<Card[]>;
+export class MarketListComponent {
 
   typeOfActionManagerMarketList: 'insert' | 'edit' | 'delete';
   productData: Card;
 
+  @Select(MarketListStates.getMarketList) marketList$: Observable<Card[]>;
+  @Select(MarketListStates.isLoading) isLoaded$: Observable<boolean>;
+
   constructor(
       private _marketService: MarketService
   ) { }
-
-  ngOnInit(): void {
-    this.getMovies();
-  }
-
-  getMovies(): void {
-
-    this.movies$ = this._marketService.getMovies()
-        .pipe(
-            delay(2000),
-        );
-  }
-
-/*  editMovies(productData: string): void {
-
-    this.productData = productId;
-  }*/
 
   getProductId(productId: Card): void {
     this.productData = productId;

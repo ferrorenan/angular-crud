@@ -1,22 +1,29 @@
 <app-panel-content class="pt-6">
   <app-structure-container>
     <div class="col-lg-8">
-      <ng-container *ngIf="(movies$ | async) as marketList; else statusApiTemplate">
-        <div [@listAnimation]="marketList.length">
-          <ng-container *ngFor="let movie of marketList">
-            <div>
-              <app-card [card]="movie"
-                        (editEvent)="getProductId($event); typeOfActionManagerMarketList = 'edit'"
-                        (buttonAction)="getProductId($event); typeOfActionManagerMarketList = 'delete'"></app-card>
-            </div>
+      <ng-container *ngIf="(marketList$ | async) as marketList">
+        <ng-container *ngIf="marketList.length; else statusApiTemplate">
+          <div [@listAnimation]="marketList.length">
+            <ng-container *ngFor="let movie of marketList">
+              <div>
+                <app-card [card]="movie"
+                          (editEvent)="getProductId($event); typeOfActionManagerMarketList = 'edit'"
+                          (buttonAction)="getProductId($event); typeOfActionManagerMarketList = 'delete'"></app-card>
+              </div>
+            </ng-container>
+          </div>
+        </ng-container>
+        <ng-template #statusApiTemplate>
+          <ng-container *ngIf="(isLoaded$ | async); else hasErrorTemplate">
+            <ngx-skeleton-loader [theme]="{width: '100%', height: '95px', marginBottom: '14px', borderRadius: '1.5rem'}"
+                                 [count]="7"></ngx-skeleton-loader>
           </ng-container>
-        </div>
+          <ng-template #hasErrorTemplate>
+            <h2 class="text-danger">Erro</h2>
+          </ng-template>
+        </ng-template>
       </ng-container>
     </div>
-    <ng-template #statusApiTemplate>
-      <ngx-skeleton-loader [theme]="{width: '100%', height: '95px', marginBottom: '14px', borderRadius: '1.5rem'}"
-                           [count]="7"></ngx-skeleton-loader>
-    </ng-template>
   </app-structure-container>
   <app-fab (fabClick)="typeOfActionManagerMarketList = 'insert'"></app-fab>
 
