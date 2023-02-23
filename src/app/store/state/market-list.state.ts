@@ -5,10 +5,14 @@ import {
   StateContext,
 } from '@ngxs/store';
 import { Injectable } from '@angular/core';
-import { MarketListActions } from '../actions/market-list.actions';
+import {
+  MarketListActions,
+} from '../actions/market-list.actions';
 import { delay } from 'rxjs';
 import { Card } from '../../models/card';
 import { MarketService } from '../../services/market.service';
+import { AlertService } from '../../services/alert.service';
+import DeleteItemFromMarketList = MarketListActions.DeleteItemFromMarketList;
 
 export interface MarketListStateModel {
   items: Card[];
@@ -31,7 +35,8 @@ const defaultState: MarketListStateModel = {
 export class MarketListStates {
 
   constructor(
-      private _marketListService: MarketService
+      private _marketListService: MarketService,
+      private _alertService: AlertService,
   ) {}
 
   @Selector()
@@ -73,5 +78,27 @@ export class MarketListStates {
             ctx.dispatch(new MarketListActions.GetMarketListError());
           }),
         });
+  }
+
+  @Action(MarketListActions.DeleteItemFromMarketList)
+  deleteItemFromMarketList(ctx: StateContext<boolean>,  { itemToDelete }: DeleteItemFromMarketList) {
+    this._marketListService
+        .removeItemFromList(itemToDelete)
+        .subscribe({
+          error: (() => {
+            ctx.dispatch(new MarketListActions.DeleteItemFromMarketListError());
+            this._alertService
+                .showErrorFeedbackClient();
+          }),
+          complete: (() => {
+            ctx.dispatch(new MarketListActions.DeleteItemFromMarketListSuccess());
+            this._alertService
+                .showFeedbackClient(
+                    'Yeah, done!',
+                    `The ${itemToDelete} was deleted from your market list!`,
+                    'success',
+                );
+          })
+        })
   }
 }
