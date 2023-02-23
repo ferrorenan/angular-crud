@@ -21,9 +21,16 @@
                     [height]="25">
           </app-icon>
           <ng-container *ngIf="(marketList$ | async) as marketList">
-            <span class="text-success fw-bold">
-              {{ marketList.length }}
-            </span>
+            <ng-container *ngIf="marketList.length; else loadingTemplate">
+              <span class="text-success fw-bold">
+                {{ marketList.length }}
+              </span>
+            </ng-container>
+            <ng-template #loadingTemplate>
+              <div class="spinner-grow text-success"
+                   role="status">
+              </div>
+            </ng-template>
           </ng-container>
         </div>
         <div class="col-12 col-lg-auto order-lg-1">
