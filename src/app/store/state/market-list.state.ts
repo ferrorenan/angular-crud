@@ -13,6 +13,7 @@ import { Card } from '../../models/card';
 import { MarketService } from '../../services/market.service';
 import { AlertService } from '../../services/alert.service';
 import DeleteItemFromMarketList = MarketListActions.DeleteItemFromMarketList;
+import InsertItemFromMarketList = MarketListActions.InsertItemFromMarketList;
 
 export interface MarketListStateModel {
   items: Card[];
@@ -80,6 +81,33 @@ export class MarketListStates {
         });
   }
 
+  @Action(MarketListActions.InsertItemFromMarketList)
+  insertItemMarketList(ctx: StateContext<any>, { itemToInsert }: InsertItemFromMarketList) {
+    this._marketListService
+        .insertMovies(itemToInsert)
+        .subscribe({
+          error: (() => {
+            ctx.dispatch(new MarketListActions.InsertItemFromMarketListError());
+            this._alertService
+                .showFeedbackClient(
+                    'OooOuuhH!',
+                    'Something happened and we had a error!',
+                    'error',
+                );
+          }),
+          complete: (() => {
+            this._alertService
+                .showFeedbackClient(
+                    'New item added!',
+                    'Your new item was added in your market list!',
+                    'success',
+                );
+            ctx.dispatch(new MarketListActions.InsertItemFromMarketListSuccess());
+            ctx.dispatch(new MarketListActions.GetMarketList());
+          })
+        });
+  }
+
   @Action(MarketListActions.DeleteItemFromMarketList)
   deleteItemFromMarketList(ctx: StateContext<boolean>,  { itemToDelete }: DeleteItemFromMarketList) {
     this._marketListService
@@ -99,6 +127,6 @@ export class MarketListStates {
                     'success',
                 );
           })
-        })
+        });
   }
 }
