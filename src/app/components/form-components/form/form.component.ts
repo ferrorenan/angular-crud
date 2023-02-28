@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import { AlertService } from '../../../services/alert.service';
 import { Card } from '../../../models/card';
 import { MarketService } from '../../../services/market.service';
+import { Store } from '@ngxs/store';
+import { MarketListActions } from '../../../store/actions/market-list.actions';
 
 @Component({
   selector: 'app-form',
@@ -24,6 +26,7 @@ export class FormComponent extends BaseFormComponent implements OnInit {
       private _formBuilder: FormBuilder,
       private _alertService: AlertService,
       private _marketService: MarketService,
+      private _store: Store
   ) {
     super();
   }
@@ -141,29 +144,7 @@ export class FormComponent extends BaseFormComponent implements OnInit {
 
   insertNewProductToMarketList(): void {
 
-    this._marketService.insertMovies(this.formulary.getRawValue())
-        .subscribe({
-          next: ((response) => {
-            console.log(response);
-          }),
-          error: ((error) => {
-            console.log(error);
-            this._alertService
-                .showFeedbackClient(
-                    'OooOuuhH!',
-                    'Something happened and we had a error!',
-                    'error',
-                );
-          }),
-          complete: (() => {
-            this._alertService
-                .showFeedbackClient(
-                    'New item added!',
-                    'Your new item was added in your market list!',
-                    'success',
-                );
-          })
-        })
+    this._store.dispatch(new MarketListActions.InsertItemFromMarketList(this.formulary.getRawValue()));
   }
 
   updateProductData(): void {
