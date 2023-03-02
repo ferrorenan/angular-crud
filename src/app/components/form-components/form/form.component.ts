@@ -36,13 +36,11 @@ export class FormComponent extends BaseFormComponent implements OnInit {
     this.buildForm();
 
 
-    var myOffcanvas = document.getElementById('offcanvasWithBackdrop')
+    const myOffcanvas = document.getElementById('offcanvasWithBackdrop')
     // @ts-ignore
     myOffcanvas.addEventListener('shown.bs.offcanvas', () => {
-      console.log(`o tipo ${this.productData}`);
+
       if (this.typeOfManager === 'edit') {
-        console.log('entrou');
-        console.log(this.productData);
 
         this.pathFormValuesToEdit();
       }
@@ -155,28 +153,6 @@ export class FormComponent extends BaseFormComponent implements OnInit {
       quantity: this.formulary.value.quantity,
     };
 
-    this._marketService.editProductData(productUpdated)
-        .subscribe({
-          next: ((response) => {
-            console.log(response);
-          }),
-          error: ((error) => {
-            console.log(error);
-            this._alertService
-                .showFeedbackClient(
-                    'OooOuuhH!',
-                    'Something happened and we had a error!',
-                    'error',
-                );
-          }),
-          complete: (() => {
-            this._alertService
-                .showFeedbackClient(
-                    'Product Updated!',
-                    'Your procut was updated with the new informations!',
-                    'success',
-                );
-          })
-        })
+    this._store.dispatch(new MarketListActions.UpdateItemFromMarketList(productUpdated));
   }
 }

@@ -14,6 +14,7 @@ import { MarketService } from '../../services/market.service';
 import { AlertService } from '../../services/alert.service';
 import DeleteItemFromMarketList = MarketListActions.DeleteItemFromMarketList;
 import InsertItemFromMarketList = MarketListActions.InsertItemFromMarketList;
+import UpdateItemFromMarketList = MarketListActions.UpdateItemFromMarketList;
 
 export interface MarketListStateModel {
   items: Card[];
@@ -103,6 +104,29 @@ export class MarketListStates {
                     'success',
                 );
             ctx.dispatch(new MarketListActions.InsertItemFromMarketListSuccess());
+            ctx.dispatch(new MarketListActions.GetMarketList());
+          })
+        });
+  }
+
+  @Action(MarketListActions.UpdateItemFromMarketList)
+  updateItemFromMarketList(ctx: StateContext<boolean>, { itemToUpdate}: UpdateItemFromMarketList) {
+    this._marketListService
+        .editProductData(itemToUpdate)
+        .subscribe({
+          error: (() => {
+            ctx.dispatch(new MarketListActions.UpdateItemFromMarketListError());
+            this._alertService
+                .showErrorFeedbackClient();
+          }),
+          complete: (() => {
+            this._alertService
+                .showFeedbackClient(
+                    'Product Updated!',
+                    `Your procut: ${itemToUpdate.name} was updated with the new informations!`,
+                    'success',
+                );
+            ctx.dispatch(new MarketListActions.UpdateItemFromMarketListSuccess());
             ctx.dispatch(new MarketListActions.GetMarketList());
           })
         });

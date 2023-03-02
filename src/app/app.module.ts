@@ -24,7 +24,6 @@ import { MarketListStates } from './store/state/market-list.state';
     HeaderModule,
     NgxsReduxDevtoolsPluginModule.forRoot({
       name: 'MarketList',
-      disabled: environment.production,
     }),
     NgxsModule.forRoot([
       MarketListStates
