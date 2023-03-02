@@ -1,3 +1,5 @@
+import { Card } from '../../models/card';
+
 export namespace MarketListActions {
 
   export class GetMarketList {
@@ -38,5 +40,19 @@ export namespace MarketListActions {
 
   export class DeleteItemFromMarketListError {
     static readonly type = '[MarketList] Delete Item Market List Error';
+  }
+
+  export class UpdateItemFromMarketList {
+    static readonly type = '[MarketList] Update Item Market List';
+
+    constructor(public readonly itemToUpdate: Card) {}
+  }
+
+  export class UpdateItemFromMarketListSuccess {
+    static readonly type = '[MarketList] Update Item Market List Success';
+  }
+
+  export class UpdateItemFromMarketListError {
+    static readonly type = '[MarketList] Update Item Market List Error';
   }
 }
