@@ -150,6 +150,7 @@ export class MarketListStates {
                     `The ${itemToDelete} was deleted from your market list!`,
                     'success',
                 );
+            ctx.dispatch(new MarketListActions.GetMarketList);
           })
         });
   }
