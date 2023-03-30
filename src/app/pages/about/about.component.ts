@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Card } from '../../models/card';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -41,5 +42,19 @@ export class AboutComponent {
     },
   ];
 
-  constructor() { }
+  constructor(
+      private _metaManager: Meta
+  ) { }
+
+  ngOnInit(): void {
+    this.updateMetaDescription();
+  }
+
+  updateMetaDescription(): void {
+
+    this._metaManager.updateTag({
+      name: 'description',
+      content: 'A simple Angular CRUD Application to manage your shopping list!'
+    });
+  }
 }
