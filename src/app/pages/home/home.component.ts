@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from '../../models/link';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,19 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+      private _metaManager: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.updateMetaDescription();
+  }
+
+  updateMetaDescription(): void {
+
+    this._metaManager.updateTag({
+      name: 'description',
+      content: 'Angular CRUD - Homepage'
+    });
   }
 }

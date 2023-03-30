@@ -5,6 +5,7 @@ import { Card } from '../../models/card';
 import { MarketService } from '../../services/market.service';
 import { Select } from '@ngxs/store';
 import { MarketListStates } from '../../store/state/market-list.state';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-market-list',
@@ -14,7 +15,7 @@ import { MarketListStates } from '../../store/state/market-list.state';
     animateListItems
   ]
 })
-export class MarketListComponent {
+export class MarketListComponent implements OnInit {
 
   typeOfActionManagerMarketList: 'insert' | 'edit' | 'delete';
   productData: Card;
@@ -23,10 +24,24 @@ export class MarketListComponent {
   @Select(MarketListStates.isLoading) isLoaded$: Observable<boolean>;
 
   constructor(
-      private _marketService: MarketService
+      private _marketService: MarketService,
+      private _metaManager: Meta
   ) { }
+
+  ngOnInit() {
+
+    this.updateMetaDescription();
+  }
 
   getProductId(productId: Card): void {
     this.productData = productId;
+  }
+
+  updateMetaDescription(): void {
+
+    this._metaManager.updateTag({
+      name: 'description',
+      content: 'A new way to manage your Market List!'
+    });
   }
 }
